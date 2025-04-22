@@ -1,0 +1,27 @@
+{
+    "geode": "4.3.1",
+    "gd": {
+        "win": "2.2074",
+        "android": "2.2074",
+        "mac": "2.2074",
+        "ios": "2.2074"
+    },
+    "id": "xanii.languages",
+    "name": "Languages",
+    "version": "v1.0.0",
+    "developers": [
+		"Xanii",
+		"wideawake"
+	],
+    "description": "Adds Languages to Geometry Dash",
+    "settings": {
+        "Language": {
+			"type": "string",
+			"name": "Language",
+			"default": "English",
+			"match": "[A-Z][a-z]+",
+			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
+			"one-of": ["English", "Espanol", "Portuguese", "Russki", "Deutsch"]
+		}
+    }
+}

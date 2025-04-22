@@ -1,0 +1,50 @@
+#include <Geode/Geode.hpp> 
+#include <Geode/modify/EndLevelLayer.hpp>
+
+using namespace geode::prelude;
+
+std::vector<std::string> splitString(const std::string& s, char delimiter) {
+    std::vector<std::string> tokens;
+    std::istringstream ss(s);
+    std::string token;
+    while (std::getline(ss, token, delimiter)) {
+        tokens.push_back(token); 
+    }
+    return tokens;
+}
+
+class $modify(EndLevelLayer) {
+    void customSetup() {
+        std::string langType = Mod::get()->getSettingValue<std::string>("Language");
+        EndLevelLayer::customSetup();
+
+        auto mainLayer = this->getChildByID("main-layer");
+        auto attemptLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("attempts-label"));
+        auto jumpsLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("jumps-label"));
+        auto timeLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("time-label"));
+
+        auto time = splitString(timeLabel->getString(), ':');
+        auto playTime = fmt::format("{}:{}", time[1], time[2]);
+
+        if (langType == "Espanol") {
+            attemptLabel->setString(fmt::format("Intentos: {}", m_playLayer->m_attempts).c_str());
+            jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str());
+            timeLabel->setString(fmt::format("Tiempo:{}", playTime).c_str());
+        }
+        if (langType == "Portuguese") {
+            attemptLabel->setString(fmt::format("Tentattivas: {}", m_playLayer->m_attempts).c_str());
+            jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str());
+            timeLabel->setString(fmt::format("Tempo:{}", playTime).c_str());
+        }
+        if (langType == "Russki") {
+            attemptLabel->setString(fmt::format("Popytki: {}", m_playLayer->m_attempts).c_str());
+            jumpsLabel->setString(fmt::format("Pryzki: {}", m_playLayer->m_jumps).c_str());
+            timeLabel->setString(fmt::format("Vremja:{}", playTime).c_str());
+        }
+        if (langType == "Deutsch") {
+            attemptLabel->setString(fmt::format("Versuche: {}", m_playLayer->m_attempts).c_str());
+            jumpsLabel->setString(fmt::format("Spruenge: {}", m_playLayer->m_jumps).c_str());
+            timeLabel->setString(fmt::format("Zeit:{}", playTime).c_str());
+        }
+    }
+};
