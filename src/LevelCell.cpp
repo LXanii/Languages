@@ -132,7 +132,7 @@ class $modify(LevelCell) {
             std::string viewText2 = viewText->getString();
 
             if (viewText2 == "View") {
-                viewText->setString("Ansicht");
+                viewText->setString("Ansehen");
                 viewText->setScale(0.35);
             }
             else {
