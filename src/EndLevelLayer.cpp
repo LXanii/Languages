@@ -27,9 +27,9 @@ class $modify(EndLevelLayer) {
         auto playTime = fmt::format("{}:{}", time[1], time[2]);
 
         if (langType == "Espanol") {
-            attemptLabel->setString(fmt::format("Intentos: {}", m_playLayer->m_attempts).c_str());
-            jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str());
-            timeLabel->setString(fmt::format("Tiempo:{}", playTime).c_str());
+            attemptLabel->setString(fmt::format("Intentos: {}", m_playLayer->m_attempts).c_str()); // "Attempts: 0"
+            jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str()); // "Jumps: 0"
+            timeLabel->setString(fmt::format("Tiempo:{}", playTime).c_str()); // "Time: 0"
         }
         if (langType == "Portuguese") {
             attemptLabel->setString(fmt::format("Tentattivas: {}", m_playLayer->m_attempts).c_str());

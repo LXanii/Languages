@@ -2,28 +2,27 @@
 #include <Geode/modify/LevelBrowserLayer.hpp>
 
 using namespace geode::prelude; 
-        
+      
 class $modify(LevelBrowserLayer) {
     bool init(GJSearchObject* p0) {
-        std::string langType = Mod::get()->getSettingValue<std::string>("Language");
         bool result = LevelBrowserLayer::init(p0);
-
-        auto mainLayer = this->getChildByID("GJListLayer");
-        auto mylevelsLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("title"));
+        std::string langType = Mod::get()->getSettingValue<std::string>("Language");
+        bool allText = false;
+        
+        log::info("{}", m_lastPage);
+        if (reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text") != NULL)) allText = true;
 
         if (langType == "Espanol") {
-            mylevelsLabel->setString(("Mis Niveles"));
+            if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Todos"); // "all"
         }
         if (langType == "Portuguese") {
-            mylevelsLabel->setString(("Os Meus Niveis"));
+            if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Todos");
         }
         if (langType == "Russki") {
-            mylevelsLabel->setString(("Moi Urovni"));
+            if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Vse");
         }
         if (langType == "Deutsch") {
-            mylevelsLabel->setString(("Meine Levels"));
-       
-
+            if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Alle");
         }
         return result;
     }

@@ -13,6 +13,9 @@ project(Languages VERSION 1.0.0)
 add_library(${PROJECT_NAME} SHARED
     src/PlayLayer.cpp
     src/EndLevelLayer.cpp
+    src/LevelBrowserLayer.cpp
+    src/GJListLayer.cpp
+    src/LevelCell.cpp
     # Add any extra C++ source files here
 )
 
