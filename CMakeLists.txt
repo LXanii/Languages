@@ -16,6 +16,7 @@ add_library(${PROJECT_NAME} SHARED
     src/LevelBrowserLayer.cpp
     src/GJListLayer.cpp
     src/LevelCell.cpp
+    src/SetFolderPopup.cpp
     # Add any extra C++ source files here
 )
 
