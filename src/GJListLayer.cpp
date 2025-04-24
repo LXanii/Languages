@@ -16,7 +16,7 @@ class $modify(GJListLayer) {
             if (newString == "Online Lists") newString = "Listas en Linea"; // "Favorite Lists"
         }
         if (langType == "Portuguese") {
-            if (newString == "My Levels") newString = "Os Meus Niveis";
+            if (newString == "My Levels") newString = "Meus Niveis";
             if (newString == "Saved Levels") newString = "Niveis Guardados";
             if (newString == "Online Levels") newString = "Niveis em Linha";
             if (newString == "My Lists") newString = "As Minhas Listas"; // "My Lists"

@@ -64,8 +64,8 @@ class $modify(LevelCell) {
             else viewText->setString("Obter");
 
             if (length == "Tiny") {
-                lengthLabel->setString("Minusculo");
-                lengthLabel->setScale(0.225);
+                lengthLabel->setString("Curto");
+                lengthLabel->setScale(0.35);
             }
             if (length == "Short") {
                 lengthLabel->setString("Pequeno");
