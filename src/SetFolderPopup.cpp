@@ -12,6 +12,12 @@ class $modify(SetFolderPopup) {
             if (langType == "Russki") title = "Perejti v Papku";
             if (langType == "Deutsch") title = "Gehe zu Ordner";
         }
+        if (title == "Set Folder") {
+            if (langType == "Espanol") title = "Establecer Carpeta";
+            if (langType == "Portuguese") title = "Definir Pasta";
+            if (langType == "Russki") title = "Ustanovit Papku";
+            if (langType == "Deutsch") title = "Ordner Einstellen";
+        }
         return SetFolderPopup::init(value, isCreated, title);
     };
 };

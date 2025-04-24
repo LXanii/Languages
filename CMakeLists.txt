@@ -11,13 +11,14 @@ set(CMAKE_CXX_VISIBILITY_PRESET hidden)
 project(Languages VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
+    src/main.cpp
     src/PlayLayer.cpp
     src/EndLevelLayer.cpp
     src/LevelBrowserLayer.cpp
     src/GJListLayer.cpp
     src/LevelCell.cpp
     src/SetFolderPopup.cpp
-    # Add any extra C++ source files here
+    src/EditLevelLayer.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

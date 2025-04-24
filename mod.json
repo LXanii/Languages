@@ -23,5 +23,10 @@
 			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 			"one-of": ["English", "Espanol", "Portuguese", "Russki", "Deutsch"]
 		}
+    },
+    "resources": {
+        "sprites": [
+            "resources/*.png"
+        ]
     }
 }
