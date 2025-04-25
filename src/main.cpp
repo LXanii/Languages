@@ -2,8 +2,6 @@
 #include <Geode/modify/MenuLayer.hpp>
 #include <Geode/ui/GeodeUI.hpp>
 
-#include "LanguagePopupLayer.hpp"
-
 using namespace geode::prelude;
 
 class $modify(LanguageLayer, MenuLayer) {
