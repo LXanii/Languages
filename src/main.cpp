@@ -11,7 +11,6 @@ class $modify(LanguageLayer, MenuLayer) {
 	struct Fields {
 		CCSprite* langBtnSprite;
 		CCMenuItemSpriteExtra* langBtn;
-		LanguagePopupLayer* LPL;
 	};
 
 	bool init() {
