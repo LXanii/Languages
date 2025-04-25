@@ -9,7 +9,6 @@ class $modify(LevelBrowserLayer) {
         std::string langType = Mod::get()->getSettingValue<std::string>("Language");
         bool allText = false;
         
-        log::info("{}", m_lastPage);
         if (reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text") != NULL)) allText = true;
 
         if (langType == "Espanol") {

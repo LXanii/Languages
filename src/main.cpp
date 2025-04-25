@@ -22,10 +22,10 @@ class $modify(LanguageLayer, MenuLayer) {
 		m_fields->langBtnSprite->setScale(0.38);
 		m_fields->langBtn = CCMenuItemSpriteExtra::create(m_fields->langBtnSprite, this, menu_selector(LanguageLayer::openList));
 
-		#if !defined(GEODE_IS_ANDROID)
-			rightMenu->addChild(m_fields->langBtn, -1);
-			rightMenu->updateLayout(false);
-		#endif
+		//#if !defined(GEODE_IS_ANDROID)
+		rightMenu->addChild(m_fields->langBtn, -1);
+		rightMenu->updateLayout(false);
+		//#endif
 
 		return result;
 	}

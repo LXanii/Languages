@@ -9,10 +9,7 @@
     "id": "xanii.languages",
     "name": "Languages",
     "version": "v1.0.0",
-    "developers": [
-		"Xanii",
-		"wideawake"
-	],
+    "developer": "Xanii",
     "description": "Adds Languages to Geometry Dash",
     "settings": {
         "Language": {

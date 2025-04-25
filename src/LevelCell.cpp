@@ -10,11 +10,12 @@ class $modify(LevelCell) {
         bool creatingTab = false;
 
         auto mainLayer = this->getChildByID("main-layer");
+        auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
         if (mainLayer->getChildByID("info-label") != NULL) creatingTab = true;
 
         auto lengthLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("length-label"));
         std::string length = lengthLabel->getString();
-
+        
         if (langType == "Espanol") {
             if (creatingTab) {
                 auto verifiedLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("info-label"));
@@ -22,16 +23,17 @@ class $modify(LevelCell) {
                 if (verified == "Verified") verifiedLabel->setString("Verificado"); // "Verified"
                 else verifiedLabel->setString("Sin verificar"); // "Unverified"
             }
-
-            auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
-            auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
-
-            std::string viewText2 = viewText->getString();
-
-            if (viewText2 == "View") viewText->setString("Ver"); // "View"
-            else {
-                viewText->setString("Consiguelo"); // "Get It"
-                viewText->setScale(0.275);
+            
+            if (viewBtn->getChildrenCount() > 0) { // crash fix 4 weekly & daily
+                auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
+    
+                std::string viewText2 = viewText->getString();
+    
+                if (viewText2 == "View") viewText->setString("Ver"); // "View"
+                else {
+                    viewText->setString("Consiguelo"); // "Get It"
+                    viewText->setScale(0.275);
+                }
             }
 
             if (length == "Tiny") lengthLabel->setString("Tiny"); // "Tiny"
@@ -55,13 +57,15 @@ class $modify(LevelCell) {
                 else verifiedLabel->setString("Nao verificado");
             }
             
-            auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
-            auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
-
-            std::string viewText2 = viewText->getString();
-
-            if (viewText2 == "View") viewText->setString("Ver");
-            else viewText->setString("Obter");
+            if (viewBtn->getChildrenCount() > 0) {
+                auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
+                auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
+    
+                std::string viewText2 = viewText->getString();
+    
+                if (viewText2 == "View") viewText->setString("Ver");
+                else viewText->setString("Obter");
+            }
 
             if (length == "Tiny") {
                 lengthLabel->setString("Curto");
@@ -86,18 +90,20 @@ class $modify(LevelCell) {
                 else verifiedLabel->setString("Neproveren");
             }
             
-            auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
-            auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
-
-            std::string viewText2 = viewText->getString();
-
-            if (viewText2 == "View") {
-                viewText->setString("Posmotret");
-                viewText->setScale(0.275);
-            }
-            else {
-                viewText->setString("Polucit");
-                viewText->setScale(0.325);
+            if (viewBtn->getChildrenCount() > 0) {
+                auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
+                auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
+    
+                std::string viewText2 = viewText->getString();
+    
+                if (viewText2 == "View") {
+                    viewText->setString("Posmotret");
+                    viewText->setScale(0.275);
+                }
+                else {
+                    viewText->setString("Polucit");
+                    viewText->setScale(0.325);
+                }
             }
 
             if (length == "Tiny") {
@@ -126,18 +132,20 @@ class $modify(LevelCell) {
                 }
             }
             
-            auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
-            auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
-
-            std::string viewText2 = viewText->getString();
-
-            if (viewText2 == "View") {
-                viewText->setString("Ansehen");
-                viewText->setScale(0.35);
-            }
-            else {
-                viewText->setString("Kriegen");
-                viewText->setScale(0.35);
+            if (viewBtn->getChildrenCount() > 0) {
+                auto viewBtn = reinterpret_cast<CCNode*>(mainLayer->getChildByID("main-menu")->getChildByID("view-button")->getChildren()->objectAtIndex(0));
+                auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
+    
+                std::string viewText2 = viewText->getString();
+    
+                if (viewText2 == "View") {
+                    viewText->setString("Ansehen");
+                    viewText->setScale(0.35);
+                }
+                else {
+                    viewText->setString("Kriegen");
+                    viewText->setScale(0.35);
+                }
             }
 
             if (length == "Tiny") {
