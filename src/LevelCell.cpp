@@ -53,8 +53,8 @@ class $modify(LevelCell) {
             if (creatingTab) {
                 auto verifiedLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("info-label"));
                 std::string verified = verifiedLabel->getString();
-                if (verified == "Verified") verifiedLabel->setString("Verificado");
-                else verifiedLabel->setString("Nao verificado");
+                if (verified == "Verified") verifiedLabel->setString("Verificar");
+                else verifiedLabel->setString("Nao verificar");
             }
             
             if (viewBtn->getChildrenCount() > 0) {

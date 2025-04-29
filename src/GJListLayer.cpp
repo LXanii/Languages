@@ -15,6 +15,7 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "Favorite Lists") p1 = "Listas Favoritas"; // "Online Lists"
             if (p1 != NULL && (std::string)p1 == "Online Lists") p1 = "Listas en Linea"; // "Favorite Lists"
             if (p1 != NULL && (std::string)p1 == "Map Packs") p1 = "Paquetes de Mapas"; // "Map Packs"
+            if (p1 != NULL && (std::string)p1 == "Soundtrack") p1 = "Banda sonora"; // "Soundtrack"
         }
         if (langType == "Portuguese") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Meus Niveis";
@@ -25,6 +26,7 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "Favorite Lists") p1 = "Listas de Favoritos"; // "Online Lists"
             if (p1 != NULL && (std::string)p1 == "Online Lists") p1 = "Listas online"; // "Favorite Lists"
             if (p1 != NULL && (std::string)p1 == "Map Packs") p1 = "Pacotes de Mapas"; // "Map Packs"
+            if (p1 != NULL && (std::string)p1 == "Soundtrack") p1 = "Banda sonora"; // "Soundtrack"
         }
         if (langType == "Russki") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Moi Urovni";
@@ -35,6 +37,7 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "Favorite Lists") p1 = "Ljubimye Spiski"; // "Online Lists"
             if (p1 != NULL && (std::string)p1 == "Online Lists") p1 = "Onlajn Spiski"; // "Favorite Lists"
             if (p1 != NULL && (std::string)p1 == "Map Packs") p1 = "Nabory Kart"; // "Map Packs"
+            if (p1 != NULL && (std::string)p1 == "Soundtrack") p1 = "Saundtrek"; // "Soundtrack"
         }
         if (langType == "Deutsch") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Meine Level";
@@ -45,6 +48,7 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "Favorite Lists") p1 = "Bevorzugte Listen"; // "Online Lists"
             if (p1 != NULL && (std::string)p1 == "Online Lists") p1 = "Online Listen"; // "Favorite Lists"
             if (p1 != NULL && (std::string)p1 == "Map Packs") p1 = "Karten-Packs"; // "Map Packs"
+            //if (p1 != NULL && (std::string)p1 == "Soundtrack") p1 = "Paquetes de Mapas"; // "Soundtrack"
         }
         return GJListLayer::init(p0, p1, p2, p3, p4, p5);
     }

@@ -166,14 +166,39 @@ class $modify(FLAlertLayer) {
             if (langType == "Deutsch") desc = "Hassvolle, beleidigende oder anderweitig unangemessene Inhalte, sei es im Level, im Namen oder in der Beschreibung, koennen zur <cr>Loeschung</c> fuehren. Dasselbe gilt fuer Level, die Cheats oder Exploits missbrauchen. Das Stehlen von Assets aus anderen Levels wird <co>entmutigt</c> und kann dazu fuehren, dass ein Level nicht bewertet wird, je nach Kontext, Schweregrad, Credit und mehr. Level, die mit Hacks verifiziert wurden, koennen nicht bewertet werden. <cy>Diese Richtlinien und ihre Durchsetzung liegen ganz im Ermessen von RobTop.</c>";
         }
 
+        if ((std::string)title == "Gauntlets") {
+            if (langType == "Espanol") title = "Guanteletes";
+            if (langType == "Portuguese") title = "Manoplas";
+            if (langType == "Russki") title = "Percatki";
+            if (langType == "Deutsch") title = "Fehdehandschuhe";
+        }
+        if (desc == "<cg>Gauntlets</c> are themed collections of 5 rated levels that give a special <cy>reward</c> once beaten. They are made by RobTop based on which levels fit the theme or through official <cl>creator contests</c>. Follow RobTop on social media to be notified about future contests!") {
+            if (langType == "Espanol") desc = "<cg>Guanteletes</c> son colecciones temáticas de 5 niveles puntuados que dan una <cy>recompensa</c> especial una vez superados. Son creados por RobTop basandose en que niveles encajan con el tema o a traves de <cl>concursos oficiales de creadores</c>. Sigue a RobTop en las redes sociales para recibir notificaciones sobre futuros concursos.";
+            if (langType == "Portuguese") desc = "<cg>Manoplas</c> sao colecoes tematicas de 5 niveis classificados que dao uma <cy>recompensa</c> especial quando vencidos. Elas sao feitas pelo RobTop com base nas fases que se encaixam no tema ou atraves de concursos oficiais de <cl>criadores</c>. Siga o RobTop nas redes sociais para ser notificado sobre futuros concursos!";
+            if (langType == "Russki") desc = "<cg>Percatki</c> - eto tematiceskie sborniki iz 5 rejtingovyh urovnej, kotorye dajut osobuju <cy>nagradu</c> posle prohozdenija. Oni sozdajutsja RobTop na osnovanii togo, kakie urovni sootvetstvujut teme, ili v hode oficial nyh <cl>konkursov sozdatelej</c>. Sledite za RobTop v social nyh setjah, ctoby polucat uvedomlenija o budusih konkursah!";
+            if (langType == "Deutsch") desc = "<cg>Fehdehandschuhe</c> sind thematische Sammlungen von 5 bewerteten Levels, die eine besondere <cy>Belohnung</c> geben, wenn sie besiegt werden. Sie werden von RobTop erstellt, je nachdem, welche Level zum Thema passen, oder durch offizielle <cl>Erstellerwettbewerbe</c>. Folge RobTop auf den sozialen Medien, um ueber zukuenftige Wettbewerbe informiert zu werden!";
+        }
+
         if ((std::string)title == "Trash level") {
             if (langType == "Espanol") title = "Nivel de Basura";
             if (langType == "Portuguese") title = "Nivel do Lixo";
             if (langType == "Russki") title = "Uroven Musora";
             if (langType == "Deutsch") title = "Ebene des Papierkorbs";
         }
+        if ((std::string)title == "Quit Game") {
+            if (langType == "Espanol") title = "Abandonar el juego";
+            if (langType == "Portuguese") title = "Sair do jogo";
+            if (langType == "Russki") title = "Vyjti iz igry";
+            if (langType == "Deutsch") title = "Spiel beenden";
+        }
+        if (desc == "Are you sure you want to <cr>quit</c>?") {
+            if (langType == "Espanol") desc = "Estas seguro de que quieres <cr>abandonar</c>?";
+            if (langType == "Portuguese") desc = "Tens a certeza de que queres <cr>desistir</c>?";
+            if (langType == "Russki") desc = "Vy uvereny, cto hotite <cr>vyjti</c>?";
+            if (langType == "Deutsch") desc = "Sind Sie sicher, dass Sie <cr>beenden</c> wollen?";
+        }
         if (desc == "Are you sure you want to <cr>trash</c> this level?\n<cy>You can restore the level or permanently delete it through the Trashcan.</c>") {
-            if (langType == "Espanol") desc = "¿Estas seguro de que quieres <cr>borrar</c> este nivel?\n<cy>Puedes restaurar el nivel o borrarlo permanentemente a traves de la papelera.</c>";
+            if (langType == "Espanol") desc = "Estas seguro de que quieres <cr>borrar</c> este nivel?\n<cy>Puedes restaurar el nivel o borrarlo permanentemente a traves de la papelera.</c>";
             if (langType == "Portuguese") desc = "Tens a certeza de que queres <cr>apagar</c> este nivel?\n<cy>Podes restaurar o nivel ou apaga-lo permanentemente atraves da Lixeira.</c>";
             if (langType == "Russki") desc = "Vy uvereny, cto hotite <cr>vybrosit</c> etot uroven?\n<cy>Vy mozete vosstanovit uroven ili udalit ego navsegda cerez korzinu.</c>";
             if (langType == "Deutsch") desc = "Moechten Sie dieses Level wirklich in den <cr>Papierkorb</c> verschieben?\n<cy>Sie koennen das Level wiederherstellen oder es ueber den Papierkorb dauerhaft loeschen.</c>";
@@ -216,6 +241,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Portuguese") btn2 = "SIM";
             if (langType == "Russki") btn2 = "DA";
             if (langType == "Deutsch") btn2 = "YES";
+        }
+        if ((std::string)btn1 == "No") {
+            //if (langType == "Espanol") btn1 = "NO";
+            if (langType == "Portuguese") btn1 = "Nao";
+            if (langType == "Russki") btn1 = "Net";
+            //if (langType == "Deutsch") btn1 = "NO";
+        }
+        if (btn2 != NULL && (std::string)btn2 == "Yes") {
+            if (langType == "Espanol") btn2 = "Si";
+            if (langType == "Portuguese") btn2 = "Sim";
+            if (langType == "Russki") btn2 = "Da";
+            //if (langType == "Deutsch") btn2 = "Yes";
         }
         if ((std::string)btn1 == "Cancel") {
             if (langType == "Espanol") btn1 = "Cancelar";

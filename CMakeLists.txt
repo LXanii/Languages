@@ -12,9 +12,10 @@ project(Languages VERSION 1.0.0)
 
 add_library(${PROJECT_NAME} SHARED
     src/main.cpp
+    src/PlayLayer.cpp
+    src/PauseLayer.cpp
     src/splitFunc.cpp
     src/EditLevelLayer.cpp
-    src/PlayLayer.cpp
     src/EndLevelLayer.cpp
     src/DailyLevelPage.cpp
     src/DailyLevelNode.cpp
@@ -25,6 +26,9 @@ add_library(${PROJECT_NAME} SHARED
     src/FLAlertLayer.cpp
     src/SetIDPopup.cpp
     src/SetTextPopup.cpp
+    src/RewardsPage.cpp
+    src/LevelSelectLayer.cpp
+    src/SongCell.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
