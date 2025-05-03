@@ -14,7 +14,7 @@ class $modify(LevelPage) {
             normalLabel->setString("Modo Normal");
             practiceLabel->setString("Modo de Practica");
         }
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             normalLabel->setString("Modo Normal");
             practiceLabel->setString("Modo de Pratica");
         }

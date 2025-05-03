@@ -8,7 +8,7 @@ class $modify(SetIDPopup) {
         std::string langType = Mod::get()->getSettingValue<std::string>("Language");
         if (title == "Go to Page") {
             if (langType == "Espanol") title = "Ir a la Pagina";
-            if (langType == "Portuguese") title = "Ir para a Pagina";
+            if (langType == "Portugues") title = "Ir para a Pagina";
             if (langType == "Russki") title = "Perejti na Stranicu";
             if (langType == "Deutsch") title = "Weiter zur Seite";
         }

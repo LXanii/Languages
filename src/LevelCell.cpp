@@ -49,12 +49,12 @@ class $modify(LevelCell) {
             if (length == "XL") lengthLabel->setString("XL");
         }
 
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             if (creatingTab) {
                 auto verifiedLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("info-label"));
                 std::string verified = verifiedLabel->getString();
-                if (verified == "Verified") verifiedLabel->setString("Verificar");
-                else verifiedLabel->setString("Nao verificar");
+                if (verified == "Verified") verifiedLabel->setString("Verificado");
+                else verifiedLabel->setString("Nao verificado");
             }
             
             if (viewBtn->getChildrenCount() > 0) {
@@ -68,12 +68,12 @@ class $modify(LevelCell) {
             }
 
             if (length == "Tiny") {
-                lengthLabel->setString("Curto");
-                lengthLabel->setScale(0.35);
+                lengthLabel->setString("Pequeno");
+                lengthLabel->setScale(0.25);
             }
             if (length == "Short") {
-                lengthLabel->setString("Pequeno");
-                if(creatingTab) lengthLabel->setScale(0.35);
+                lengthLabel->setString("Curto");
+                lengthLabel->setScale(0.35);
             }
             if (length == "Medium") lengthLabel->setString("Medio");
             if (length == "Long") {

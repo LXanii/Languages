@@ -16,7 +16,7 @@ class $modify(LevelSelectLayer) {
         auto soundtrackLabel = reinterpret_cast<CCLabelBMFont*>(soundtrackMenu->getChildByID("download-soundtrack-label"));
         if ((std::string)soundtrackLabel->getString() == "Download the soundtrack") {
             if (m_fields->langType == "Espanol") soundtrackLabel->setString("Descargar la banda sonora"); // "Download the soundtrack"
-            if (m_fields->langType == "Portuguese") soundtrackLabel->setString("Descarregar a banda sonora");
+            if (m_fields->langType == "Portugues") soundtrackLabel->setString("Baixar a trilha sonora");
             if (m_fields->langType == "Russki") soundtrackLabel->setString("Skacat saundtrek");
             if (m_fields->langType == "Deutsch") soundtrackLabel->setString("Download des Soundtracks");
         }
@@ -48,7 +48,7 @@ class $modify(LevelSelectLayer) {
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Practica");
                 }
-                if (m_fields->langType == "Portuguese") {
+                if (m_fields->langType == "Portugues") {
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Pratica");
                 }
@@ -76,7 +76,7 @@ class $modify(LevelSelectLayer) {
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Practica");
                 }
-                if (m_fields->langType == "Portuguese") {
+                if (m_fields->langType == "Portugues") {
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Pratica");
                 }

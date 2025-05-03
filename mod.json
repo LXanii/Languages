@@ -18,7 +18,7 @@
 			"default": "English",
 			"match": "[A-Z][a-z]+",
 			"filter": "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
-			"one-of": ["English", "Espanol", "Portuguese", "Russki", "Deutsch"]
+			"one-of": ["English", "Espanol", "Portugues", "Russki", "Deutsch"]
 		}
     },
     "resources": {

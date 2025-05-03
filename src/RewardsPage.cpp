@@ -12,7 +12,7 @@ class $modify(RewardsPage) {
             if ((std::string)m_leftLabel->getString() == "Open") m_leftLabel->setString("Abrir");
             if ((std::string)m_rightLabel->getString() == "Open") m_rightLabel->setString("Abrir");
         }
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             if ((std::string)m_leftLabel->getString() == "Open") m_leftLabel->setString("Aberto");
             if ((std::string)m_rightLabel->getString() == "Open") m_rightLabel->setString("Aberto");
         }

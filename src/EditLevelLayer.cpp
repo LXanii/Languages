@@ -32,7 +32,7 @@ class $modify(EditLevelLayer) {
             }
             if (length == "XL") lengthLabel->setString("XL");
         }
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             if (verified == "Verified") verifiedLabel->setString("Verificado"); // "Verified"
             else verifiedLabel->setString("Nao verificar"); // "Unverified"
             verifiedLabel->setPositionX(verifiedLabel->getPositionX() + 12);

@@ -23,8 +23,8 @@ class $modify(EndLevelLayer) {
             jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str()); // "Jumps: 0"
             timeLabel->setString(fmt::format("Tiempo:{}", playTime).c_str()); // "Time: 0"
         }
-        if (langType == "Portuguese") {
-            attemptLabel->setString(fmt::format("Tentattivas: {}", m_playLayer->m_attempts).c_str());
+        if (langType == "Portugues") {
+            attemptLabel->setString(fmt::format("Tentativas: {}", m_playLayer->m_attempts).c_str());
             jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str());
             timeLabel->setString(fmt::format("Tempo:{}", playTime).c_str());
         }

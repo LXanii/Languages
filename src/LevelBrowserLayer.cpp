@@ -14,7 +14,7 @@ class $modify(LevelBrowserLayer) {
         if (langType == "Espanol") {
             if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Todos"); // "all"
         }
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             if (allText) reinterpret_cast<CCLabelBMFont*>(this->getChildByID("select-all-text"))->setString("Todos");
         }
         if (langType == "Russki") {

@@ -16,7 +16,7 @@ class $modify(PauseLayer) {
             normalLabel->setString("Modo Normal");
             practiceLabel->setString("Modo de Practica");
         }
-        if (langType == "Portuguese") {
+        if (langType == "Portugues") {
             musicLabel->setString("Musica");
             normalLabel->setString("Modo Normal");
             practiceLabel->setString("Modo de Pratica");

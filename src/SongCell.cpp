@@ -14,7 +14,7 @@ class $modify(SongCell) {
         auto viewText = reinterpret_cast<CCLabelBMFont*>(viewBtn->getChildren()->objectAtIndex(0));
 
         if (langType == "Espanol") viewText->setString("Ver");
-        if (langType == "Portuguese") viewText->setString("Ver");
+        if (langType == "Portugues") viewText->setString("Ver");
         if (langType == "Russki") {
             viewText->setString("Posmotret");
             viewText->setScale(viewText->getScale() - 0.3);

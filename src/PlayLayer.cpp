@@ -9,7 +9,7 @@ class $modify(PlayLayer) {
         PlayLayer::resetLevel();
 
         if (langType == "Espanol") m_attemptLabel->setString(fmt::format("Intento {}", m_attempts).c_str()); //"Attempts"
-        if (langType == "Portuguese") m_attemptLabel->setString(fmt::format("Tentativa {}", m_attempts).c_str());
+        if (langType == "Portugues") m_attemptLabel->setString(fmt::format("Tentativa {}", m_attempts).c_str());
         if (langType == "Russki") m_attemptLabel->setString(fmt::format("Popytka {}", m_attempts).c_str());
         if (langType == "Deutsch") m_attemptLabel->setString(fmt::format("Versuch {}", m_attempts).c_str());
     }
