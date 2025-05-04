@@ -152,6 +152,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") title = "Urovni";
             if (langType == "Deutsch") title = "Loeschen";
         }
+        if ((std::string)title == "Update Level Desc") {
+            if (langType == "Espanol") title = "Actualizacion descripcion del Nivel";
+            if (langType == "Portugues") title = "Atualizacao da descricao do Nivel";
+            if (langType == "Russki") title = "Obnovlenie opisanija Urovnja";
+            if (langType == "Deutsch") title = "Aktualisierung der Ebenenbeschreibung";
+        }
+        if (desc == "Do you want to <cg>update</c> the level <cl>description</c>?") {
+            if (langType == "Espanol") desc = "Quieres <cg>actualizar</c> la <cl>descripcion</c> del nivel?";
+            if (langType == "Portugues") desc = "Pretende <cg>atualizar</c> o nivel <cl>descricao</c>?";
+            if (langType == "Russki") desc = "Hotite li vy <cg>obnovit</c> uroven <cl>opisanija</c>?";
+            if (langType == "Deutsch") desc = "Willst du die <cg>Beschreibung</c> der Ebene <cl>aktualisieren</c>?";
+        }
 
         // oh boy
 
@@ -229,6 +241,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Uroven <co>level</c> polucaet <cy>Stars</c>, esli ego ocenil RobTop. Dlja nerejtingovyh urovnej uroven sloznosti ustanavlivaetsja golosovaniem soobsestva na stranice kazdogo urovnja. Takim ze obrazom opredeljaetsja sloznost <cr>Demon</c>.\nImena pol zovatelej <cy>zolotye</c> dlja zaregistrirovannyh pol zovatelej i <cg>zelenye</c> dlja nezaregistrirovannyh. Pesnja imeet <cl>sinij cvet</c>, esli ona javljaetsja oficial noj, i <cp>rozovyj</c>, esli ona javljaetsja pol zovatel skoj.";
             if (langType == "Deutsch") desc = "Ein <co>Level</c> wird mit <cy>Sternen</c> belohnt, wenn er von RobTop bewertet wurde. Bei nicht bewerteten Levels wird der Schwierigkeitsgrad durch Abstimmungen der Community auf der Seite des jeweiligen Levels festgelegt. Auf diese Weise werden auch die <cr>Demon</c>-Schwierigkeiten bestimmt.\nBenutzernamen sind <cy>gold</c> für registrierte Benutzer und <cg>gruen</c> fuer nicht registrierte Benutzer. Ein Song ist <cl>blau</c>, wenn er offiziell ist und <cp>rosa</c>, wenn er individuell ist.";
         }
+        if ((std::string)title == "Search Info") {
+            if (langType == "Espanol") title = "Buscar Informacion";
+            if (langType == "Portugues") title = "Informacoes de Pesquisa";
+            if (langType == "Russki") title = "Poiskovaja Informacija";
+            if (langType == "Deutsch") title = "Informationen Suchen";
+        }
+        if (desc == "<cl>Custom Songs:</c> To only show levels using custom songs. Select <cy>Song</c> and <cy>Custom</c> but leave the textfield blank.") {
+            if (langType == "Espanol") desc = "<cl>Canciones personalizadas:</c> Para mostrar solo los niveles que utilicen canciones personalizadas. Selecciona <cy>Cancion</c> y <cy>Personalizada</c> pero deja el campo de texto en blanco.";
+            if (langType == "Portugues") desc = "<cl>Musicas personalizadas:</c> Para mostrar apenas os niveis que usam musicas personalizadas. Selecione <cy>Song</c> e <cy>Custom</c>, mas deixe o campo de texto em branco.";
+            if (langType == "Russki") desc = "<cl> Pol zovatel skie pesni:</c> Ctoby pokazyvat tol ko urovni s pol zovatel skimi pesnjami. Vyberite <cy>Song</c> i <cy>Custom</c>, no ostav te tekstovoe pole pustym.";
+            if (langType == "Deutsch") desc = "<cl>Benutzerdefinierte Songs:</c> Um nur Level mit benutzerdefinierten Songs anzuzeigen. Waehlen Sie <cy>Song</c> und <cy>Benutzerdefiniert</c>, aber lassen Sie das Textfeld leer.";
+        }
 
         // btns
 
@@ -298,6 +322,12 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") btn2 = "Udalit";
             if (langType == "Deutsch") btn2 = "Loeschen";
         }
+        if (btn2 != NULL && (std::string)btn2 == "Update") {
+            if (langType == "Espanol") btn2 = "Actualizacion";
+            if (langType == "Portugues") btn2 = "Atualizacao";
+            if (langType == "Russki") btn2 = "Obnovlenie";
+            //if (langType == "Deutsch") btn2 = "Loeschen";
+        }
 
         if ((std::string)title == "Level Stats" && langType != "English") {
             std::string attempts = "Total Attempts"; std::string jumps = "Total Jumps"; std::string normal = "Normal"; std::string practice = "Practice"; std::string objects = "Objects";
@@ -339,7 +369,9 @@ class $modify(FLAlertLayer) {
                 desc = fmt::format("{}\n<cg>{}</c>: {}\n<cl>{}</c>: {}\n<cp>{}</c>: {}\n<co>{}</c>: {}", splitDesc[0], attempts, splitString(splitDesc[1], ' ').back(), jumps, splitString(splitDesc[2], ' ').back(), normal, splitString(splitDesc[3], ' ').back(), practice, splitString(splitDesc[4], ' ').back()).c_str();
             }
             catch (...) { // creator page
-                desc = fmt::format("{}\n<cg>{}</c>: {}\n<cl>{}</c>: {}\n<cp>{}</c>: {}", splitDesc[0], attempts, splitString(splitDesc[1], ' ').back(), jumps, splitString(splitDesc[2], ' ').back(), objects, splitString(splitDesc[3], ' ').back()).c_str();
+                auto objectCount = splitString(splitDesc[3], ' ');
+                if (objectCount.back() == "<cr>(high)</c>") desc = fmt::format("{}\n<cg>{}</c>: {}\n<cl>{}</c>: {}\n<cp>{}</c>: {} {}", splitDesc[0], attempts, splitString(splitDesc[1], ' ').back(), jumps, splitString(splitDesc[2], ' ').back(), objects, objectCount[1], objectCount.back()).c_str();
+                else desc = fmt::format("{}\n<cg>{}</c>: {}\n<cl>{}</c>: {}\n<cp>{}</c>: {}", splitDesc[0], attempts, splitString(splitDesc[1], ' ').back(), jumps, splitString(splitDesc[2], ' ').back(), objects, objectCount.back()).c_str();
             }
         } 
 

@@ -39,12 +39,12 @@ class $modify(EditLevelLayer) {
             versionLabel->setString(fmt::format("Versao: {}", p0->m_levelVersion).c_str());
             
             if (length == "Tiny") {
-                lengthLabel->setString("Curto"); // "Tiny"
-                lengthLabel->setPositionX(lengthLabel->getPositionX() + 5);
+                lengthLabel->setString("Pequeno"); // "Tiny"
+                lengthLabel->setPositionX(lengthLabel->getPositionX() + 15);
             }
             if (length == "Short") {
-                lengthLabel->setString("Pequeno"); // "Short"
-                lengthLabel->setPositionX(lengthLabel->getPositionX() + 8);
+                lengthLabel->setString("Curto"); // "Short"
+                lengthLabel->setPositionX(lengthLabel->getPositionX() + 2);
             }
             if (length == "Medium") {
                 lengthLabel->setString("Medio"); // "Medium"

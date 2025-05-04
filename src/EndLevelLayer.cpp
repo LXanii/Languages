@@ -14,10 +14,9 @@ class $modify(EndLevelLayer) {
         auto attemptLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("attempts-label"));
         auto jumpsLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("jumps-label"));
         auto timeLabel = reinterpret_cast<CCLabelBMFont*>(mainLayer->getChildByID("time-label"));
-
         auto time = splitString(timeLabel->getString(), ':');
         auto playTime = fmt::format("{}:{}", time[1], time[2]);
-
+        
         if (langType == "Espanol") {
             attemptLabel->setString(fmt::format("Intentos: {}", m_playLayer->m_attempts).c_str()); // "Attempts: 0"
             jumpsLabel->setString(fmt::format("Saltos: {}", m_playLayer->m_jumps).c_str()); // "Jumps: 0"
@@ -37,6 +36,15 @@ class $modify(EndLevelLayer) {
             attemptLabel->setString(fmt::format("Versuche: {}", m_playLayer->m_attempts).c_str());
             jumpsLabel->setString(fmt::format("Spruenge: {}", m_playLayer->m_jumps).c_str());
             timeLabel->setString(fmt::format("Zeit:{}", playTime).c_str());
+        }
+
+        if (reinterpret_cast<CCNode*>(mainLayer->getChildByID("complete-message")) != nullptr) {
+            auto completeMessage = reinterpret_cast<CCNode*>(mainLayer->getChildByID("complete-message"));
+            auto messageLabel = reinterpret_cast<CCLabelBMFont*>(reinterpret_cast<CCNode*>(completeMessage->getChildren()->objectAtIndex(0))->getChildren()->objectAtIndex(0));
+            if (langType == "Espanol") {messageLabel->setString("Nivel Verificado!"); messageLabel->setPositionX(messageLabel->getPositionX() - 3);}
+            if (langType == "Portugues") {messageLabel->setString("Nivel Verificado!"); messageLabel->setPositionX(messageLabel->getPositionX() - 3);}
+            if (langType == "Russki") {messageLabel->setString("Uroven Proveren!"); messageLabel->setPositionX(messageLabel->getPositionX() - 3);}
+            if (langType == "Deutsch") {messageLabel->setString("Level Verifiziert!"); messageLabel->setPositionX(messageLabel->getPositionX() - 3);}
         }
     }
 };

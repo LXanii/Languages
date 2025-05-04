@@ -29,6 +29,8 @@ add_library(${PROJECT_NAME} SHARED
     src/RewardsPage.cpp
     src/LevelSelectLayer.cpp
     src/SongCell.cpp
+    src/LevelSearchLayer.cpp
+    src/MoreSearchLayer.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
