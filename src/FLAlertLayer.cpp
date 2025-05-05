@@ -140,17 +140,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") title = "Pravila Kommentirovanija";
             if (langType == "Deutsch") title = "Kommentar Regeln";
         }
-        if (desc == "Do <cr>not</c> spam.\n2. Do <cr>not</c> harass other players.\n3. Do <cr>not</c> post inappropriate or controversial content.\n4. Do <cr>not</c> try to bypass these rules.\n<cy>These rules and their enforcement are entirely at Elder Moderators' discretion.</c>") {
+        if (desc == "1. Do <cr>not</c> spam.\n2. Do <cr>not</c> harass other players.\n3. Do <cr>not</c> post inappropriate or controversial content.\n4. Do <cr>not</c> try to bypass these rules.\n<cy>These rules and their enforcement are entirely at Elder Moderators' discretion.</c>") {
             if (langType == "Espanol") desc = "1. No hagas <cr>no</c> spam.\n2. No acoses a otros jugadores. No <cr>no</c> publiques contenido inapropiado o controvertido. No <cr>no</c> intentes eludir estas normas.<cy>Estas normas y su aplicacion quedan totalmente a discrecion de los Moderadores Elder.</c>";
             if (langType == "Portugues") desc = "1. Nao fazer <cr>nao</c> spam.\n2. Nao <cr>nao</c> assediar outros jogadores.\n3. Nao publique conteudo inapropriado ou controverso.\n4. Nao <cr>nao</c> tentar contornar estas regras.\n<cy>Estas regras e a sua aplicacao ficam inteiramente ao criterio dos Moderadores Anciaos.</c>";
             if (langType == "Russki") desc = "1. Ne <cr>ne</c> spamit.\n2. Ne <cr>ne</c> presledovat drugih igrokov.\n3. Ne razmesajte <cr>ne</c> neumestnyj ili spornyj kontent.\n4. Ne pytajtes obojti eti pravila.\n<cy>Eti pravila i ih sobljudenie polnost ju na usmotrenie moderatorov Eldera.</c>";
             if (langType == "Deutsch") desc = "1. Spammen Sie <cr>nicht</c>.\n2. Belaestigen Sie <cr>nicht</c> andere Spieler.\n3. Veroeffentlichen Sie <cr>nicht</c> unangemessene oder kontroverse Inhalte.\n4. Versuchen Sie <cr>nicht</c>, diese Regeln zu umgehen.\n<cy>Diese Regeln und ihre Durchsetzung liegen ganz im Ermessen der Elder-Moderatoren.</c>";
         }
-        if ((std::string)title == "Delete") {
-            if (langType == "Espanol") title = "Borrar";
-            if (langType == "Portugues") title = "Eliminar";
-            if (langType == "Russki") title = "Urovni";
-            if (langType == "Deutsch") title = "Loeschen";
+        if ((std::string)title == "Delete" && langType != "English") {
+            auto splitDesc = splitString(desc, ' ');
+            if (langType == "Espanol") title = "Borrar"; desc = fmt::format("Estas seguro de que quieres <cr>borrar</c> los <cy>{}</c> niveles <cg>seleccionados</c>?", splitDesc[8]).c_str();
+            if (langType == "Portugues") title = "Eliminar"; desc = fmt::format("Tem certeza de que deseja <cr>excluir</c> os <cy>{}</c> niveis selecionados</c>?", splitDesc[8]).c_str();
+            if (langType == "Russki") title = "Urovni"; desc = fmt::format("Vy uvereny, cto hotite <cr>udalit</c> <cy>{}</c> vybrannyj <cg>uroven</c>?", splitDesc[8]).c_str();
+            if (langType == "Deutsch") title = "Loeschen"; desc = fmt::format("Sind Sie sicher, dass Sie die <cy>{}</c> ausgewaehlten <cg>Ebenen</c> <cr>loeschen</c> wollen?", splitDesc[8]).c_str();
         }
         if ((std::string)title == "Update Level Desc") {
             if (langType == "Espanol") title = "Actualizacion descripcion del Nivel";
@@ -164,7 +165,54 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Hotite li vy <cg>obnovit</c> uroven <cl>opisanija</c>?";
             if (langType == "Deutsch") desc = "Willst du die <cg>Beschreibung</c> der Ebene <cl>aktualisieren</c>?";
         }
-
+        if ((std::string)title == "List Info") {
+            if (langType == "Espanol") title = "Informacion de la Lista";
+            if (langType == "Portugues") title = "Informacoes da Lista";
+            if (langType == "Russki") title = "Informacija o Spiske";
+            if (langType == "Deutsch") title = "Informationen Auflisten";
+        }
+        if ((std::string)title == "Level Info") {
+            if (langType == "Espanol") title = "Informacion de Nivel";
+            if (langType == "Portugues") title = "Informacoes da Nivel";
+            if (langType == "Russki") title = "Informacija ob Urovne";
+            if (langType == "Deutsch") title = "Ebene Informationen";
+        }
+        if ((std::string)title == "Delete Song") {
+            if (langType == "Espanol") title = "Borrar Cancion";
+            if (langType == "Portugues") title = "Excluir Musica";
+            if (langType == "Russki") title = "Udalit Pesnju";
+            if (langType == "Deutsch") title = "Song Loeschen";
+        }
+        if (desc == "Do you want to <cr>delete</c> this song?") {
+            if (langType == "Espanol") desc = "Quieres <cr>borrar</c> esta cancion?";
+            if (langType == "Portugues") desc = "Voce deseja <cr>excluir</c> essa musica?";
+            if (langType == "Russki") desc = "Vy hotite <cr>udalit</c> etu pesnju?";
+            if (langType == "Deutsch") desc = "Willst du dieses Lied <cr>loeschen</c>?";
+        }
+        if ((std::string)title == "Unfriend") {
+            if (langType == "Espanol") btn2 = "Desconectar";
+            if (langType == "Portugues") btn2 = "Desfazer Amizade";
+            if (langType == "Russki") btn2 = "Otkljucit";
+            if (langType == "Deutsch") btn2 = "Auskuppeln";
+        }
+        if (desc == "Are you sure you want to remove this friend?") {
+            if (langType == "Espanol") desc = "Estas seguro de que quieres eliminar a este amigo?";
+            if (langType == "Portugues") desc = "Tem certeza de que deseja remover esse amigo?";
+            if (langType == "Russki") desc = "Vy uvereny, cto hotite udalit etogo druga?";
+            if (langType == "Deutsch") desc = "Sind Sie sicher, dass Sie diesen Freund entfernen moechten?";
+        }
+        if ((std::string)title == "Clone List") {
+            if (langType == "Espanol") title = "Lista de Clones";
+            if (langType == "Portugues") title = "Lista de Clones";
+            if (langType == "Russki") title = "Spisok Klonov";
+            if (langType == "Deutsch") title = "Klon-Liste";
+        }
+        if (desc == "Create a <cl>copy</c> of this <cl>list</c>?") {
+            if (langType == "Espanol") desc = "Crear una <cl>copia</c> de esta <cl>lista</c>?";
+            if (langType == "Portugues") desc = "Criar uma <cl>copia</c> dessa <cl>lista</c>?";
+            if (langType == "Russki") desc = "Sozdat <cl>kopiju</c> etogo <cl>spiska</c>?";
+            if (langType == "Deutsch") desc = "Eine <cl>Kopie</c> dieser <cl>Liste</c> erstellen?";
+        }
         // oh boy
 
         if ((std::string)title == "Upload Guidelines") {
@@ -180,6 +228,54 @@ class $modify(FLAlertLayer) {
             if (langType == "Deutsch") desc = "Hassvolle, beleidigende oder anderweitig unangemessene Inhalte, sei es im Level, im Namen oder in der Beschreibung, koennen zur <cr>Loeschung</c> fuehren. Dasselbe gilt fuer Level, die Cheats oder Exploits missbrauchen. Das Stehlen von Assets aus anderen Levels wird <co>entmutigt</c> und kann dazu fuehren, dass ein Level nicht bewertet wird, je nach Kontext, Schweregrad, Credit und mehr. Level, die mit Hacks verifiziert wurden, koennen nicht bewertet werden. <cy>Diese Richtlinien und ihre Durchsetzung liegen ganz im Ermessen von RobTop.</c>";
         }
 
+        if ((std::string)title == "Remove Server Level") {
+            if (langType == "Espanol") title = "Eliminar Nivel Subido";
+            if (langType == "Portugues") title = "Remover Nivel Carregado";
+            if (langType == "Russki") title = "Udalit Zagruzennyj Uroven";
+            if (langType == "Deutsch") title = "Hochgeladene Level Entfernen";
+        }
+        if (desc == "Do you want to <cr>delete</c> this <cg>level</c> from the <cl>server</c>?\n<cy>(Your level will no longer be available online)</c>") {
+            if (langType == "Espanol") desc = "Quieres <cr>borrar</c> este <cg>nivel</c> del <cl>servidor</c>?\n<cy>(Tu nivel ya no estara disponible en linea)</c>";
+            if (langType == "Portugues") desc = "Deseja <cr>excluir</c> este <cg>nivel</c> do <cl>servidor</c>?\n<cy>(Seu nivel nao estara mais disponivel on-line)</c>";
+            if (langType == "Russki") desc = "Hotite li vy <cr>udalit</c> etot <cg>uroven</c> s <cl>servera</c>?\n<cy>(Vas uroven bol se ne budet dostupen v seti)</c>.";
+            if (langType == "Deutsch") desc = "Moechtest du <cr>diesen</c> <cg>Level</c> vom <cl>Server</c> loeschen?\n<cy>(Dein Level wird nicht mehr online verfuegbar sein)</c>";
+        }
+        if ((std::string)title == "Paths of Power") {
+            if (langType == "Espanol") title = "Caminos del Poder";
+            if (langType == "Portugues") title = "Caminhos do Poder";
+            if (langType == "Russki") title = "Puti Sily";
+            if (langType == "Deutsch") title = "Wege der Macht";
+        }
+        if (desc == "When you activate a path, <cy>Stars</c> and <cl>Moons</c> you <cg>collect</c> will level up your <co>Path</c>. You can unlock multiple paths, but <cr>only one</c> can be <cr>active</c> at a time.") {
+            if (langType == "Espanol") desc = "Cuando activas una senda, las <cy>Estrellas</c> y <cl>Lunas</c> que <cg>recojas</c> subiran de nivel tu <co>Senda</c>. Puedes desbloquear varios caminos, pero <cr>solo uno</c> puede estar <cr>activo</c> a la vez.";
+            if (langType == "Portugues") desc = "Quando voce ativa um caminho, as <cy>estrelas</c> e <cl>muoes</c> que voce <cg>coleta</c> aumentam o nivel do seu <co>caminho</c>. Voce pode desbloquear vários caminhos, mas <cr>apenas um</c> pode estar <cr>ativo</c> de cada vez.";
+            if (langType == "Russki") desc = "Kogda vy aktiviruete put, <cy>zvezdy</c> i <cl>luny</c>, kotorye vy <cg>sobiraete</c>, povysjat uroven vašego <co>puti</c>. Vy mozete otkryt neskol ko putej, no <cr>tol ko odin</c> mozet byt <cr>aktivnym</c> v odno i to ze vremja.";
+            if (langType == "Deutsch") desc = "Wenn du einen Pfad aktivierst, werden <cy>Sterne</c> und <cl>Moons</c>, die du <cg>sammelst</c>, deinen <co>Pfad</c> aufwerten. Du kannst mehrere Pfade freischalten, aber <cr>nur einer</c> kann zur gleichen Zeit <cr>aktiv</c> sein.";
+        }
+        if ((std::string)title == "Report Level") {
+            if (langType == "Espanol") title = "Nivel del Informe";
+            if (langType == "Portugues") title = "Nivel do Relatorio";
+            if (langType == "Russki") title = "Uroven Otceta";
+            if (langType == "Deutsch") title = "Bericht Ebene";
+        }
+        if (desc == "Do you want to <cr>report</c> this level for breaking the <cg>upload guidelines</c> found in the editor? Valid reasons include hateful, abusive, or otherwise inappropriate content, as well as hacks, cheats, or exploits.") {
+            if (langType == "Espanol") desc = "Quieres <cr>reportar</c> este nivel por romper las <cg>directrices de carga</c> que se encuentran en el editor? Las razones validas incluyen contenido que incite al odio, abusivo o inapropiado, asi como hacks, trampas o exploits.";
+            if (langType == "Portugues") desc = "Voce deseja <cr>reportar</c> esse nivel por violar as <cg>diretrizes de upload</c> encontradas no editor? Os motivos validos incluem conteudo odioso, abusivo ou de outra forma inadequado, bem como hacks, trapacas ou exploracoes.";
+            if (langType == "Russki") desc = "Vy hotite <cr>otreportirovat</c> ètot uroven za narusenie <cg>pravil zagruzki</c>, najdennyh v redaktore? K uvazitel nym pricinam otnosjatsja nenavistnyj, oskorbitel nyj ili inym obrazom neumestnyj kontent, a takze vzlomy, city ili eksplojty.";
+            if (langType == "Deutsch") desc = "Willst du diesen Level <cr>melden</c>, weil er gegen die <cg>Hochladungsrichtlinien</c> im Editor verstoesst? Gueltige Gruende sind hasserfuellte, beleidigende oder anderweitig unangemessene Inhalte sowie Hacks, Cheats oder Exploits.";
+        }
+        if ((std::string)title == "Report List") {
+            if (langType == "Espanol") title = "Lista de Informes";
+            if (langType == "Portugues") title = "Lista do Relatorios";
+            if (langType == "Russki") title = "Spisok Otceta";
+            if (langType == "Deutsch") title = "Bericht Liste";
+        }
+        if (desc == "Do you want to <cr>report</c> this list for breaking the <cg>upload guidelines</c> found in the editor? Valid reasons include hateful, abusive, or otherwise inappropriate content, as well as hacks, cheats, or exploits.") {
+            if (langType == "Espanol") desc = "Quieres <cr>reportar</c> este lista por romper las <cg>directrices de carga</c> que se encuentran en el editor? Las razones validas incluyen contenido que incite al odio, abusivo o inapropiado, asi como hacks, trampas o exploits.";
+            if (langType == "Portugues") desc = "Voce deseja <cr>reportar</c> esse lista por violar as <cg>diretrizes de upload</c> encontradas no editor? Os motivos validos incluem conteudo odioso, abusivo ou de outra forma inadequado, bem como hacks, trapacas ou exploracoes.";
+            if (langType == "Russki") desc = "Vy hotite <cr>otreportirovat</c> ètot spisok za narusenie <cg>pravil zagruzki</c>, najdennyh v redaktore? K uvazitel nym pricinam otnosjatsja nenavistnyj, oskorbitel nyj ili inym obrazom neumestnyj kontent, a takze vzlomy, city ili eksplojty.";
+            if (langType == "Deutsch") desc = "Willst du diesen Liste <cr>melden</c>, weil er gegen die <cg>Hochladungsrichtlinien</c> im Editor verstoesst? Gueltige Gruende sind hasserfuellte, beleidigende oder anderweitig unangemessene Inhalte sowie Hacks, Cheats oder Exploits.";
+        }
         if ((std::string)title == "Gauntlets") {
             if (langType == "Espanol") title = "Guanteletes";
             if (langType == "Portugues") title = "Manoplas";
@@ -239,7 +335,7 @@ class $modify(FLAlertLayer) {
             if (langType == "Espanol") desc = "Un <co>nivel</c> premia con <cy>Estrellas</c> si esta clasificado por RobTop. Para los niveles no calificados, la cara de dificultad se establece por votos de la comunidad en la pagina de cada nivel. Asi es tambien como se deciden las dificultades de <cr>Demon</c>. Los nombres son <cy>dorados</c> para los usuarios registrados y <cg>verdes</c> para los usuarios no registrados. Una cancion es <cl>azul</c> si es oficial y <cp>rosa</c> si es personalizada.";
             if (langType == "Portugues") desc = "Um <co>nível</c> recompensa <cy>Estrelas</c> se for classificado pelo RobTop. Para niveis nao classificados, a dificuldade e definida pelos votos da comunidade na pagina de cada nivel. Esta e tambem a forma como as dificuldades dos <cr>Demonios</c> sao decididas.\nOs nomes de utilizador sao <cy>ouro</c> para utilizadores registados e <cg>verde</c> para utilizadores nao registados. Uma musica e <cl>azul</c> se for oficial e <cp>rosa</c> se for personalizada.";
             if (langType == "Russki") desc = "Uroven <co>level</c> polucaet <cy>Stars</c>, esli ego ocenil RobTop. Dlja nerejtingovyh urovnej uroven sloznosti ustanavlivaetsja golosovaniem soobsestva na stranice kazdogo urovnja. Takim ze obrazom opredeljaetsja sloznost <cr>Demon</c>.\nImena pol zovatelej <cy>zolotye</c> dlja zaregistrirovannyh pol zovatelej i <cg>zelenye</c> dlja nezaregistrirovannyh. Pesnja imeet <cl>sinij cvet</c>, esli ona javljaetsja oficial noj, i <cp>rozovyj</c>, esli ona javljaetsja pol zovatel skoj.";
-            if (langType == "Deutsch") desc = "Ein <co>Level</c> wird mit <cy>Sternen</c> belohnt, wenn er von RobTop bewertet wurde. Bei nicht bewerteten Levels wird der Schwierigkeitsgrad durch Abstimmungen der Community auf der Seite des jeweiligen Levels festgelegt. Auf diese Weise werden auch die <cr>Demon</c>-Schwierigkeiten bestimmt.\nBenutzernamen sind <cy>gold</c> für registrierte Benutzer und <cg>gruen</c> fuer nicht registrierte Benutzer. Ein Song ist <cl>blau</c>, wenn er offiziell ist und <cp>rosa</c>, wenn er individuell ist.";
+            if (langType == "Deutsch") desc = "Ein <co>Level</c> wird mit <cy>Sternen</c> belohnt, wenn er von RobTop bewertet wurde. Bei nicht bewerteten Levels wird der Schwierigkeitsgrad durch Abstimmungen der Community auf der Seite des jeweiligen Levels festgelegt. Auf diese Weise werden auch die <cr>Demon</c>-Schwierigkeiten bestimmt.\nBenutzernamen sind <cy>gold</c> fuer registrierte Benutzer und <cg>gruen</c> fuer nicht registrierte Benutzer. Ein Song ist <cl>blau</c>, wenn er offiziell ist und <cp>rosa</c>, wenn er individuell ist.";
         }
         if ((std::string)title == "Search Info") {
             if (langType == "Espanol") title = "Buscar Informacion";
@@ -322,12 +418,32 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") btn2 = "Udalit";
             if (langType == "Deutsch") btn2 = "Loeschen";
         }
+        if (btn2 != NULL && (std::string)btn2 == "DELETE") {
+            if (langType == "Espanol") btn2 = "BORRAR";
+            if (langType == "Portugues") btn2 = "ELIMINAR";
+            if (langType == "Russki") btn2 = "UDALIT";
+            if (langType == "Deutsch") btn2 = "LOESCHEN";
+        }
         if (btn2 != NULL && (std::string)btn2 == "Update") {
             if (langType == "Espanol") btn2 = "Actualizacion";
             if (langType == "Portugues") btn2 = "Atualizacao";
             if (langType == "Russki") btn2 = "Obnovlenie";
             //if (langType == "Deutsch") btn2 = "Loeschen";
         }
+        if ((std::string)btn1 == "Next") {
+            if (langType == "Espanol") btn1 = "Siguiente";
+            if (langType == "Portugues") btn1 = "Proximo";
+            if (langType == "Russki") btn1 = "Sledujusij";
+            if (langType == "Deutsch") btn1 = "Weiter";
+        }
+        if (btn2 != NULL && (std::string)btn2 == "Unfriend") {
+            if (langType == "Espanol") btn2 = "Desconectar";
+            if (langType == "Portugues") btn2 = "Desfazer Amizade";
+            if (langType == "Russki") btn2 = "Otkljucit";
+            if (langType == "Deutsch") btn2 = "Auskuppeln";
+        }
+
+        // :(
 
         if ((std::string)title == "Level Stats" && langType != "English") {
             std::string attempts = "Total Attempts"; std::string jumps = "Total Jumps"; std::string normal = "Normal"; std::string practice = "Practice"; std::string objects = "Objects";
@@ -375,7 +491,7 @@ class $modify(FLAlertLayer) {
             }
         } 
 
-        log::info("{}", desc);
+        log::info("{}\n{}", desc, splitString(desc, '\n'));
 
         return FLAlertLayer::init(delegate, title, desc, btn1, btn2, width, p7, p8, p9);
     };
