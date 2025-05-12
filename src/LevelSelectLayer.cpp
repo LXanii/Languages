@@ -45,18 +45,22 @@ class $modify(LevelSelectLayer) {
     
             if ((std::string)normalLabel->getString() == "Normal Mode") {
                 if (m_fields->langType == "Espanol") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Proximamente!");
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Practica");
                 }
                 if (m_fields->langType == "Portugues") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Em Breve!");
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Pratica");
                 }
                 if (m_fields->langType == "Russki") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Skoro Budet!");
                     normalLabel->setString("Obycnyj rezim");
                     practiceLabel->setString("Rezim trenirovki");
                 }
                 if (m_fields->langType == "Deutsch") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Demnaechst Erhaeltlich!");
                     normalLabel->setString("Normaler Modus");
                     practiceLabel->setString("Uebungsmodus");
                 }
@@ -73,18 +77,22 @@ class $modify(LevelSelectLayer) {
                 auto practiceLabel = reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("practice-mode-label"));
 
                 if (m_fields->langType == "Espanol") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Proximamente!");
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Practica");
                 }
                 if (m_fields->langType == "Portugues") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Em Breve!");
                     normalLabel->setString("Modo Normal");
                     practiceLabel->setString("Modo de Pratica");
                 }
                 if (m_fields->langType == "Russki") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Skoro Budet!");
                     normalLabel->setString("Obycnyj rezim");
                     practiceLabel->setString("Rezim trenirovki");
                 }
                 if (m_fields->langType == "Deutsch") {
+                    if (levelPage->getChildByID("coming-soon-label") != nullptr) reinterpret_cast<CCLabelBMFont*>(levelPage->getChildByID("coming-soon-label"))->setString("Demnaechst Erhaeltlich!");
                     normalLabel->setString("Normaler Modus");
                     practiceLabel->setString("Uebungsmodus");
                 }

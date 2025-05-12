@@ -20,10 +20,16 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Hotite li vy otkryt rukovodstvo redaktora\nsejcas?";
             if (langType == "Deutsch") desc = "Moechten Sie den Editor Leitfaden jetzt oeffnen?";
         }
+        if (desc == "Visit Newgrounds to find awesome music?") {
+            if (langType == "Espanol") desc = "Visitas Newgrounds para encontrar musica increible?";
+            if (langType == "Portugues") desc = "Voce visita o Newgrounds para encontrar musicas incriveis?";
+            if (langType == "Russki") desc = "Posesaete Newgrounds, ctoby najti potrjasajusuju muzyku?";
+            if (langType == "Deutsch") desc = "Du besuchst Newgrounds, um tolle Musik zu finden?";
+        }
         if ((std::string)title == "Clone Level") {
             if (langType == "Espanol") title = "Nivel de Clonacion";
             if (langType == "Portugues") title = "Nivel de Clone";
-            if (langType == "Russki") title = "Uroven klonirovanija";
+            if (langType == "Russki") title = "Uroven Klonirovanija";
             if (langType == "Deutsch") title = "Klon Ebene";
         }
         if (desc == "Create a <cl>copy</c> of this <cg>level</c>?") {
@@ -165,6 +171,42 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Hotite li vy <cg>obnovit</c> uroven <cl>opisanija</c>?";
             if (langType == "Deutsch") desc = "Willst du die <cg>Beschreibung</c> der Ebene <cl>aktualisieren</c>?";
         }
+        if ((std::string)title == "Load Data") {
+            if (langType == "Espanol") title = "Datos de Carga";
+            if (langType == "Portugues") title = "Dados de Carga";
+            if (langType == "Russki") title = "Dannye o Nagruzke";
+            if (langType == "Deutsch") title = "Daten Laden";
+        }
+        if (desc == "Do you want to <cg>download</c> your account data from the <cl>cloud</c>?\n<cy>This will merge current data with the saved data.</c>") {
+            if (langType == "Espanol") desc = "Desea <cg>descargar</c> los datos de su cuenta de la <cl>nube</c>?\n<cy>Esto fusionara los datos actuales con los datos guardados.</c>";
+            if (langType == "Portugues") desc = "Deseja fazer o <cg>download</c> dos dados da sua conta a partir da <cl>nuvem</c>?\n<cy>Isso mesclara os dados atuais com os dados salvos.</c>";
+            if (langType == "Russki") desc = "Hotite li vy <cg>zagruzit</c> dannye vasego akkaunta iz <cl>oblaka</c>?\n<cy>Eto ob edinit tekusie dannye s sohranennymi.</c>";
+            if (langType == "Deutsch") desc = "Moechtest du Daten aus der <cl>Cloud</c> <cg>herunterladen</c>?\n<cy>Damit werden die aktuellen Daten mit den gespeicherten Daten zusammengefuehrt.</c>";
+        }
+        if ((std::string)title == "Save Data") {
+            if (langType == "Espanol") title = "Guardar Datos";
+            if (langType == "Portugues") title = "Salvar Dados";
+            if (langType == "Russki") title = "Sohranit Dannye";
+            if (langType == "Deutsch") title = "Daten Speichern";
+        }
+        if (desc == "Do you want to <cg>save</c> your account data on the <cl>cloud</c>?\n<cy>This will overwrite previously saved data.</c>") {
+            if (langType == "Espanol") desc = "Desea <cg>descargar</c> los datos de su cuenta de la <cl>nube</c>?\n<cy>Esto fusionara los datos actuales con los datos guardados.</c>";
+            if (langType == "Portugues") desc = "Deseja <cg>salvar</c> os dados da sua conta na <cl>nuvem</c>?\n<cy>Isso substituira os dados salvos anteriormente.</c>";
+            if (langType == "Russki") desc = "Hotite li vy <cg>sohranit</c> dannye vasej ucetnoj zapisi v <cl>oblake</c>?\n<cy>Eto perezapiset ranee sohranennye dannye.</c>";
+            if (langType == "Deutsch") desc = "Willst du deine Kontodaten in der <cl>Cloud</c> <cg>speichern?</c>\n<cy>Damit werden die zuvor gespeicherten Daten überschrieben.</c>";
+        }
+        if ((std::string)title == "Send Email") {
+            if (langType == "Espanol") title = "Enviar correo Electronico";
+            if (langType == "Portugues") title = "Enviar E-mail";
+            if (langType == "Russki") title = "Otpravit Elektronnoe pis mo";
+            if (langType == "Deutsch") title = "E-Mail Senden";
+        }
+        if (desc == "For help with any issues, please contact\n<cy>support@robtopgames.com</c>") {
+            if (langType == "Espanol") desc = "Si necesita ayuda, póngase en contacto con\n<cy>support@robtopgames.com</c>.";
+            if (langType == "Portugues") desc = "Para obter ajuda com qualquer problema, entre em contato com\n<cy>support@robtopgames.com</c>.";
+            if (langType == "Russki") desc = "Za pomos ju po ljubym voprosam obrasajtes\n<cy>support@robtopgames.com</c>.";
+            if (langType == "Deutsch") desc = "Fuer Hilfe bei Problemen wenden Sie sich bitte an\n<cy>support@robtopgames.com</c>.";
+        }
         if ((std::string)title == "List Info") {
             if (langType == "Espanol") title = "Informacion de la Lista";
             if (langType == "Portugues") title = "Informacoes da Lista";
@@ -190,16 +232,28 @@ class $modify(FLAlertLayer) {
             if (langType == "Deutsch") desc = "Willst du dieses Lied <cr>loeschen</c>?";
         }
         if ((std::string)title == "Unfriend") {
-            if (langType == "Espanol") btn2 = "Desconectar";
-            if (langType == "Portugues") btn2 = "Desfazer Amizade";
-            if (langType == "Russki") btn2 = "Otkljucit";
-            if (langType == "Deutsch") btn2 = "Auskuppeln";
+            if (langType == "Espanol") title = "Desconectar";
+            if (langType == "Portugues") title = "Desfazer Amizade";
+            if (langType == "Russki") title = "Otkljucit";
+            if (langType == "Deutsch") title = "Auskuppeln";
         }
         if (desc == "Are you sure you want to remove this friend?") {
             if (langType == "Espanol") desc = "Estas seguro de que quieres eliminar a este amigo?";
             if (langType == "Portugues") desc = "Tem certeza de que deseja remover esse amigo?";
             if (langType == "Russki") desc = "Vy uvereny, cto hotite udalit etogo druga?";
             if (langType == "Deutsch") desc = "Sind Sie sicher, dass Sie diesen Freund entfernen moechten?";
+        }
+        if ((std::string)title == "Manage") {
+            if (langType == "Espanol") title = "Gestione";
+            if (langType == "Portugues") title = "Gerenciar";
+            if (langType == "Russki") title = "Upravlenie";
+            if (langType == "Deutsch") title = "Verwalten Sie";
+        }
+        if (desc == "Open the account management page?") {
+            if (langType == "Espanol") desc = "Abrir la pagina de gestion de cuentas?";
+            if (langType == "Portugues") desc = "Abrir a pagina de gerenciamento de contas?";
+            if (langType == "Russki") desc = "Otkryt stranicu upravlenija ucetnoj zapis ju?";
+            if (langType == "Deutsch") desc = "Die Seite der Kontoverwaltung oeffnen?";
         }
         if ((std::string)title == "Clone List") {
             if (langType == "Espanol") title = "Lista de Clones";
@@ -240,6 +294,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Hotite li vy <cr>udalit</c> etot <cg>uroven</c> s <cl>servera</c>?\n<cy>(Vas uroven bol se ne budet dostupen v seti)</c>.";
             if (langType == "Deutsch") desc = "Moechtest du <cr>diesen</c> <cg>Level</c> vom <cl>Server</c> loeschen?\n<cy>(Dein Level wird nicht mehr online verfuegbar sein)</c>";
         }
+        if ((std::string)title == "Unlink Account") {
+            if (langType == "Espanol") title = "Desvincular Cuenta";
+            if (langType == "Portugues") title = "Desvincular Conta";
+            if (langType == "Russki") title = "Razblokirovat ucetnuju Zapis";
+            if (langType == "Deutsch") title = "Unlink-Konto";
+        }
+        if (desc == fmt::format("Are you sure you want to <cg>unlink</c> from the account <cl>{}</c>?\n<cy>Unlinking will delete all data from this device.</c>", GameManager::get()->m_playerName)) {
+            if (langType == "Espanol") desc = fmt::format("Estas seguro de que quieres <cg>desvincularte</c> de la cuenta <cl>{}</c>?\n<cy>La desvinculacion eliminara todos los datos de este dispositivo.</c>", GameManager::get()->m_playerName);
+            if (langType == "Portugues") desc = fmt::format("Tem certeza de que deseja <cg>desvincular</c> da conta <cl>{}</c>?\n<cy>A desvinculacao excluira todos os dados desse dispositivo.</c>", GameManager::get()->m_playerName);
+            if (langType == "Russki") desc = fmt::format("Vy uvereny, cto hotite <cg>otsoedinit sja</c> ot ucetnoj zapisi <cl>{}</c>?\n<cy>Otsoedinenie privedet k udaleniju vseh dannyh s etogo ustrojstva.</c>", GameManager::get()->m_playerName);
+            if (langType == "Deutsch") desc = fmt::format("Sind Sie sicher, dass Sie die <cg>Verknuepfung</c> von dem Konto <cl>{}</c> aufheben wollen?\n<cy>Die Aufhebung der Verknuepfung loescht alle Daten von diesem Geraet.</c>", GameManager::get()->m_playerName);
+        }
         if ((std::string)title == "Paths of Power") {
             if (langType == "Espanol") title = "Caminos del Poder";
             if (langType == "Portugues") title = "Caminhos do Poder";
@@ -263,6 +329,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Portugues") desc = "Voce deseja <cr>reportar</c> esse nivel por violar as <cg>diretrizes de upload</c> encontradas no editor? Os motivos validos incluem conteudo odioso, abusivo ou de outra forma inadequado, bem como hacks, trapacas ou exploracoes.";
             if (langType == "Russki") desc = "Vy hotite <cr>otreportirovat</c> ètot uroven za narusenie <cg>pravil zagruzki</c>, najdennyh v redaktore? K uvazitel nym pricinam otnosjatsja nenavistnyj, oskorbitel nyj ili inym obrazom neumestnyj kontent, a takze vzlomy, city ili eksplojty.";
             if (langType == "Deutsch") desc = "Willst du diesen Level <cr>melden</c>, weil er gegen die <cg>Hochladungsrichtlinien</c> im Editor verstoesst? Gueltige Gruende sind hasserfuellte, beleidigende oder anderweitig unangemessene Inhalte sowie Hacks, Cheats oder Exploits.";
+        }
+        if ((std::string)title == "Quests") {
+            if (langType == "Espanol") title = "Misiones";
+            if (langType == "Portugues") title = "Missoes";
+            if (langType == "Russki") title = "Kvesty";
+            //if (langType == "Deutsch") title = "Bericht Ebene";
+        }
+        if (desc == "<cg>Quests</c> are small daily challenges that give <cy>rewards</c>. The type of quest is decided randomly. You can have maximum 3 active and 3 queued at a time. Queued quests are indicated by <cl>dots</c> to the right of a quest.") {
+            if (langType == "Espanol") desc = "<cg>Las misiones</c> son pequenos retos diarios que dan <cy>recompensas</c>. El tipo de mision se decide aleatoriamente. Puedes tener un maximo de 3 activas y 3 en cola a la vez. Las misiones en cola se indican con <cl>puntos</c> a la derecha de una mision.";
+            if (langType == "Portugues") desc = "As <cg>missoes</c> sao pequenos desafios diarios que dao <cy>recompensas</c>. O tipo de missao e decidido aleatoriamente. Voce pode ter no maximo 3 ativas e 3 em fila de espera ao mesmo tempo. As missoes em fila sao indicadas por <cl>pontos</c> a direita de uma missao.";
+            if (langType == "Russki") desc = "<cg>Kvesty</c> - eto nebol sie ezednevnye zadanija, kotorye dajut <cy>nagrady</c>. Tip kvesta opredeljaetsja slucajnym obrazom. Odnovremenno u vas mozet byt maksimum 3 aktivnyh i 3 v oceredi. Kvesty v oceredi oboznacajutsja <cl>tockami</c> sprava ot kvesta.";
+            if (langType == "Deutsch") desc = "<cg>Quests</c> sind kleine taegliche Herausforderungen, die <cy>Belohnungen</c> geben. Die Art der Quests wird zufaellig bestimmt. Du kannst maximal 3 aktive und 3 in der Warteschlange gleichzeitig haben. Quests in der Warteschlange werden durch <cl>Punkte</c> rechts neben einer Quest angezeigt.";
         }
         if ((std::string)title == "Report List") {
             if (langType == "Espanol") title = "Lista de Informes";
@@ -388,6 +466,18 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") btn2 = "Musor";
             if (langType == "Deutsch") btn2 = "Papierkorb";
         }
+        if (btn2 != NULL && (std::string)btn2 == "Load") {
+            if (langType == "Espanol") btn2 = "Carga";
+            if (langType == "Portugues") btn2 = "Carga";
+            if (langType == "Russki") btn2 = "Zagruzit";
+            if (langType == "Deutsch") btn2 = "Laden Sie";
+        }
+        if (btn2 != NULL && (std::string)btn2 == "Save") {
+            if (langType == "Espanol") btn2 = "Guardar";
+            if (langType == "Portugues") btn2 = "Salvar";
+            if (langType == "Russki") btn2 = "Sohranit";
+            if (langType == "Deutsch") btn2 = "Speichern Sie";
+        }
         if (btn2 != NULL && (std::string)btn2 == "Exit") {
             if (langType == "Espanol") btn2 = "Salida";
             if (langType == "Portugues") btn2 = "Sair";
@@ -424,6 +514,12 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") btn2 = "UDALIT";
             if (langType == "Deutsch") btn2 = "LOESCHEN";
         }
+        if (btn2 != NULL && (std::string)btn2 == "Unlink") {
+            if (langType == "Espanol") btn2 = "Desvincular";
+            if (langType == "Portugues") btn2 = "Desvincular";
+            if (langType == "Russki") btn2 = "Razblokirovat Ssylku";
+            //if (langType == "Deutsch") btn2 = "LOESCHEN";
+        }
         if (btn2 != NULL && (std::string)btn2 == "Update") {
             if (langType == "Espanol") btn2 = "Actualizacion";
             if (langType == "Portugues") btn2 = "Atualizacao";
@@ -441,6 +537,12 @@ class $modify(FLAlertLayer) {
             if (langType == "Portugues") btn2 = "Desfazer Amizade";
             if (langType == "Russki") btn2 = "Otkljucit";
             if (langType == "Deutsch") btn2 = "Auskuppeln";
+        }
+        if (btn2 != NULL && (std::string)btn2 == "Open") {
+            if (langType == "Espanol") btn2 = "Abrir";
+            if (langType == "Portugues") btn2 = "Aberto";
+            if (langType == "Russki") btn2 = "Otkryt";
+            if (langType == "Deutsch") btn2 = "Oeffnen Sie";
         }
 
         // :(

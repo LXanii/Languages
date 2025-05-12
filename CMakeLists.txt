@@ -36,6 +36,11 @@ add_library(${PROJECT_NAME} SHARED
     src/LevelInfoLayer.cpp
     src/ShareCommentLayer.cpp
     src/GJPathPage.cpp
+    src/ChallengeNode.cpp
+    src/ChallengesPage.cpp
+    src/SongInfoLayer.cpp
+    src/SecretLayer2.cpp
+    src/SecretLayer4.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})
