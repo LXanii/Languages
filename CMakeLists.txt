@@ -41,6 +41,10 @@ add_library(${PROJECT_NAME} SHARED
     src/SongInfoLayer.cpp
     src/SecretLayer2.cpp
     src/SecretLayer4.cpp
+    src/MoreOptionsLayer.cpp
+    src/ParentalOptionsLayer.cpp
+    src/OptionsLayer.cpp
+    src/AchievementCell.cpp
 )
 
 if (NOT DEFINED ENV{GEODE_SDK})

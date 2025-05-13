@@ -23,6 +23,8 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "SFX Library Credits") p1 = "Creditos de la Biblioteca de SFX"; // "SFX Library Credits"
             if (p1 != NULL && (std::string)p1 == "Support Links") p1 = "Enlaces de Apoyo"; // "Support Links"
             if (p1 != NULL && (std::string)p1 == "Account Help") p1 = "Ayuda para Cuentas"; // "Account Help"
+            if (p1 != NULL && (std::string)p1 == "Settings") p1 = "Ajustes"; // "Settings"
+            if (p1 != NULL && (std::string)p1 == "Achievements") p1 = "Logros"; // "Achievements"
         }
         if (langType == "Portugues") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Meus Niveis";
@@ -41,6 +43,8 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "SFX Library Credits") p1 = "Creditos da Biblioteca SFX"; // "SFX Library Credits"
             if (p1 != NULL && (std::string)p1 == "Support Links") p1 = "Links de Suporte"; // "Support Links"
             if (p1 != NULL && (std::string)p1 == "Account Help") p1 = "Ajuda da conta"; // "Account Help"
+            if (p1 != NULL && (std::string)p1 == "Settings") p1 = "Configuracoes"; // "Settings"
+            if (p1 != NULL && (std::string)p1 == "Achievements") p1 = "Conquistas"; // "Achievements"
         }
         if (langType == "Russki") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Moi Urovni";
@@ -59,6 +63,8 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "SFX Library Credits") p1 = "Kredity Biblioteki SFX"; // "SFX Library Credits"
             if (p1 != NULL && (std::string)p1 == "Support Links") p1 = "Ssylki na Podderzku"; // "Support Links"
             if (p1 != NULL && (std::string)p1 == "Account Help") p1 = "Spravka o Sostojanii Sceta"; // "Account Help"
+            if (p1 != NULL && (std::string)p1 == "Settings") p1 = "Nastrojki"; // "Settings"
+            if (p1 != NULL && (std::string)p1 == "Achievements") p1 = "Dostizenija"; // "Achievements"
         }
         if (langType == "Deutsch") {
             if (p1 != NULL && (std::string)p1 == "My Levels") p1 = "Meine Level";
@@ -77,6 +83,8 @@ class $modify(GJListLayer) {
             if (p1 != NULL && (std::string)p1 == "SFX Library Credits") p1 = "SFX-Bibliothek Credits"; // "SFX Library Credits"
             if (p1 != NULL && (std::string)p1 == "Support Links") p1 = "Links zur Unterstuetzung"; // "Support Links"
             if (p1 != NULL && (std::string)p1 == "Account Help") p1 = "Konto-Hilfe"; // "Account Help"
+            if (p1 != NULL && (std::string)p1 == "Settings") p1 = "Einstellungen"; // "Settings"
+            if (p1 != NULL && (std::string)p1 == "Achievements") p1 = "Errungenschaften"; // "Achievements"
         }
         return GJListLayer::init(p0, p1, p2, p3, p4, p5);
     }

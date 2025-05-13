@@ -128,6 +128,12 @@ class $modify(FLAlertLayer) {
             if (langType == "Russki") desc = "Dostupen <cy>novyj</c> ezednevnyj uroven.\nPerekryt tekusij uroven i zagruzit sledujusij?";
             if (langType == "Deutsch") desc = "Es ist ein <cy>neues</c> taegliches Level verfuegbar.\nDas aktuelle Level ueberspringen und das naechste laden?";
         }
+        if (desc == "There is a <cy>new</c> weekly demon available.\nSkip the current level and load the next?") {
+            if (langType == "Espanol") desc = "Hay un <cy>nuevo</c> demonio semanal disponible.\nSaltar el nivel actual y cargar el siguiente?";
+            if (langType == "Portugues") desc = "Ha um <cy>novo</c> demonio semanal disponivel.\nPassar o nivel atual e carregar o seguinte?";
+            if (langType == "Russki") desc = "Dostupen <cy>novyj</c> ezenedel nyj demon.\nPerekryt tekusij uroven i zagruzit sledujusij?";
+            if (langType == "Deutsch") desc = "Es ist ein <cy>neues</c> woechentlicher daemon.\nDas aktuelle Level ueberspringen und das naechste laden?";
+        }
         if ((std::string)title == "Nothing here...") {
             if (langType == "Espanol") title = "Aquí no hay Nada...";
             if (langType == "Portugues") title = "Nada Aqui...";
@@ -592,6 +598,333 @@ class $modify(FLAlertLayer) {
                 else desc = fmt::format("{}\n<cg>{}</c>: {}\n<cl>{}</c>: {}\n<cp>{}</c>: {}", splitDesc[0], attempts, splitString(splitDesc[1], ' ').back(), jumps, splitString(splitDesc[2], ' ').back(), objects, objectCount.back()).c_str();
             }
         } 
+
+        // options
+
+        if ((std::string)title == "Info") {
+            if (langType == "Espanol") title = "Informacion";
+            if (langType == "Portugues") title = "Informacoes";
+            if (langType == "Russki") title = "Informacija";
+            if (langType == "Deutsch") title = "Informationen";
+        }
+        if (desc == "Restarts level upon death automatically.") {
+            if (langType == "Espanol") desc = "Reinicia el nivel al morir automaticamente.";
+            if (langType == "Portugues") desc = "Reinicia o nivel ao morrer automaticamente.";
+            if (langType == "Russki") desc = "Avtomaticeski perezapuskaet uroven posle smerti.";
+            if (langType == "Deutsch") desc = "Startet das Level nach dem Tod automatisch neu.";
+        }
+        if (desc == "Restarts in 0.5 s instead of 1.0 s upon death.") {
+            if (langType == "Espanol") desc = "Se reinicia en 0,5 s en lugar de 1,0 s al morir.";
+            if (langType == "Portugues") desc = "Reinicia em 0,5 s em vez de 1,0 s apos a morte.";
+            if (langType == "Russki") desc = "Posle smerti perezapuskaetsja cerez 0,5 s vmesto 1,0 s.";
+            if (langType == "Deutsch") desc = "Startet nach dem Tod in 0,5 s statt in 1,0 s neu.";
+        }
+        if (desc == "Locks and hides cursor during gameplay.") {
+            if (langType == "Espanol") desc = "Bloquea y oculta el cursor durante el juego.";
+            if (langType == "Portugues") desc = "Bloqueia e oculta o cursor durante o jogo.";
+            if (langType == "Russki") desc = "Fiksiruet i skryvaet kursor vo vremja igry.";
+            if (langType == "Deutsch") desc = "Sperrt und versteckt den Cursor während des Spielens.";
+        }
+        if (desc == "Flips which side controls which player during 2-player mode.") {
+            if (langType == "Espanol") desc = "Cambia el lado que controla a cada jugador en el modo de 2 jugadores.";
+            if (langType == "Portugues") desc = "Inverte qual lado controla qual jogador durante o modo de 2 jogadores.";
+            if (langType == "Russki") desc = "Perekljucaet storonu, kotoraja upravljaet igrokom v rezime 2 igroka.";
+            if (langType == "Deutsch") desc = "Wechselt im 2-Spieler-Modus die Seite, die den Spieler steuert.";
+        }
+        if (desc == "Limits player 1 controls to one side even when dual mode is inactive.") {
+            if (langType == "Espanol") desc = "Limita los controles del jugador 1 a un solo lado aunque el modo dual este inactivo.";
+            if (langType == "Portugues") desc = "Limita os controles do jogador 1 a um lado, mesmo quando o modo duplo esta inativo.";
+            if (langType == "Russki") desc = "Ogranicivaet upravlenie igrokom 1 s odnoj storony, daze esli dvojnoj rezim neaktiven.";
+            if (langType == "Deutsch") desc = "Begrenzt die Steuerung von Spieler 1 auf eine Seite, auch wenn der Dualmodus inaktiv ist.";
+        }
+        if (desc == "Disables mouse movement when using a controller thumbstick.") {
+            if (langType == "Espanol") desc = "Desactiva el movimiento del raton cuando se utiliza el thumbstick de un controlador.";
+            if (langType == "Portugues") desc = "Desativa o movimento do mouse ao usar um thumbstick do controlador.";
+            if (langType == "Russki") desc = "Otkljucaet dvizenie mysi pri ispol zovanii bol sogo pal ca kontrollera.";
+            if (langType == "Deutsch") desc = "Deaktiviert die Mausbewegung bei Verwendung eines Controller-Daumensticks.";
+        }
+        if (desc == "Enables some quick temporary bindings until full customization later. Use 'R' for reset, 'CTRL + R' for full reset, and 'P' to toggle hitboxes in Practice mode.") {
+            if (langType == "Espanol") desc = "Habilita algunos bindings temporales rapidos hasta la personalizacion completa mas adelante. Usa 'R' para reiniciar, 'CTRL + R' para reiniciar por completo y 'P' para cambiar las cajas de impacto en modo Practica.";
+            if (langType == "Portugues") desc = "Permite algumas vinculacoes temporárias rapidas ate a personalizacao completa mais tarde. Use “R” para reiniciar, “CTRL + R” para reiniciar completamente e “P” para alternar as hitboxes no modo Practice.";
+            if (langType == "Russki") desc = "Vkljucaet nekotorye vremennye privjazki na vremja, poka ne budet proizvedena polnaja nastrojka. Ispol zujte 'R' dlja sbrosa, 'CTRL + R' dlja polnogo sbrosa, i 'P' dlja perekljucenija hitboksov v rezime praktiki.";
+            if (langType == "Deutsch") desc = "Ermoeglicht einige schnelle temporaere Bindungen bis zur vollstaendigen Anpassung spaeter. Verwenden Sie 'R' zum Zuruecksetzen, 'STRG + R' zum vollstaendigen Zuruecksetzen und 'P' zum Umschalten der Hitboxen im Uebungsmodus.";
+        }
+        if (desc == "Shows cursor and pause button during gameplay.") {
+            if (langType == "Espanol") desc = "Muestra el cursor y el boton de pausa durante el juego.";
+            if (langType == "Portugues") desc = "Mostra o cursor e o botao de pausa durante o jogo.";
+            if (langType == "Russki") desc = "Pokazyvaet kursor i knopku pauzy vo vremja igry.";
+            if (langType == "Deutsch") desc = "Zeigt den Cursor und die Pausentaste waehrend des Spiels an.";
+        }
+        if (desc == "Hides the attempt counter when playing levels.") {
+            if (langType == "Espanol") desc = "Oculta el contador de intentos al jugar niveles.";
+            if (langType == "Portugues") desc = "Oculta o contador de tentativas ao jogar niveis.";
+            if (langType == "Russki") desc = "Skryvaet scetcik popytok vo vremja igry na urovnjah.";
+            if (langType == "Deutsch") desc = "Blendet den Versuchszaehler beim Spielen von Leveln aus.";
+        }
+        if (desc == "Flips the location of the pause button.") {
+            if (langType == "Espanol") desc = "Cambia la ubicacion del boton de pausa.";
+            if (langType == "Portugues") desc = "Inverte a localizacao do botao de pausa.";
+            if (langType == "Russki") desc = "Izmenjaet raspolozenie knopki pauzy.";
+            if (langType == "Deutsch") desc = "Aendert die Position der Pausentaste.";
+        }
+        if (desc == "Disables extra indicators on portals.") {
+            if (langType == "Espanol") desc = "Desactiva los indicadores adicionales en los portales.";
+            if (langType == "Portugues") desc = "Desativa indicadores adicionais nos portais.";
+            if (langType == "Russki") desc = "Otkljucaet dopolnitel nye indikatory na portalah.";
+            if (langType == "Deutsch") desc = "Deaktiviert zusaetzliche Indikatoren auf Portalen.";
+        }
+        if (desc == "Enables extra indicators on orbs.") {
+            if (langType == "Espanol") desc = "Activa indicadores adicionales en los orbes.";
+            if (langType == "Portugues") desc = "Ativa indicadores extras em orbes.";
+            if (langType == "Russki") desc = "Vkljucaet dopolnitel nye indikatory na orbah.";
+            if (langType == "Deutsch") desc = "Ermoeglicht zusaetzliche Indikatoren auf Kugeln.";
+        }
+        if (desc == "Disables the scaling effect on all orbs.") {
+            if (langType == "Espanol") desc = "Desactiva el efecto de escala en todos los orbes.";
+            if (langType == "Portugues") desc = "Desativa o efeito de escala em todos os orbes.";
+            if (langType == "Russki") desc = "Otkljucaet effekt masstabirovanija dlja vseh orbov.";
+            if (langType == "Deutsch") desc = "Deaktiviert den Skalierungseffekt bei allen Kugeln.";
+        }
+        if (desc == "Disables the scaling effect on only trigger orbs.") {
+            if (langType == "Espanol") desc = "Desactiva el efecto de escala sólo en los orbes de disparo.";
+            if (langType == "Portugues") desc = "Desativa o efeito de escala somente nos orbes acionadores.";
+            if (langType == "Russki") desc = "Otkljucaet effekt masstabirovanija tol ko dlja triggernyh orbov.";
+            if (langType == "Deutsch") desc = "Deaktiviert den Skalierungseffekt nur bei Triggerkugeln.";
+        }
+        if (desc == "Disables shake effects.") {
+            if (langType == "Espanol") desc = "Desactiva los efectos de vibracion.";
+            if (langType == "Portugues") desc = "Desativa os efeitos de vibracao.";
+            if (langType == "Russki") desc = "Otkljucaet effekty drozanija.";
+            if (langType == "Deutsch") desc = "Deaktiviert Verwacklungseffekte.";
+        }
+        if (desc == "Disables the shake effect that happens upon death.") {
+            if (langType == "Espanol") desc = "Desactiva el efecto de sacudida que se produce al morir.";
+            if (langType == "Portugues") desc = "Desativa o efeito de tremor que ocorre ao morrer.";
+            if (langType == "Russki") desc = "Otkljucaet effekt trjaski, voznikajusij posle smerti.";
+            if (langType == "Deutsch") desc = "Deaktiviert den Erschuetterungseffekt, der beim Tod auftritt.";
+        }
+        if (desc == "Disables the effect that happens upon changing gravity.") {
+            if (langType == "Espanol") desc = "Desactiva el efecto que se produce al cambiar la gravedad.";
+            if (langType == "Portugues") desc = "Desativa o efeito que ocorre quando a gravidade e alterada.";
+            if (langType == "Russki") desc = "Otkljucaet effekt, voznikajusij pri izmenenii gravitacii.";
+            if (langType == "Deutsch") desc = "Deaktiviert den Effekt, der bei einer Aenderung der Schwerkraft auftritt.";
+        }
+        if (desc == "Sets player icon in mini mode to default.") {
+            if (langType == "Espanol") desc = "Establece el icono del reproductor en modo mini por defecto.";
+            if (langType == "Portugues") desc = "Define o icone do player no modo mini como padrao.";
+            if (langType == "Russki") desc = "Ustanavlivaet znacok pleera v rezime mini po umolcaniju.";
+            if (langType == "Deutsch") desc = "Setzt das Spielersymbol im Mini-Modus auf den Standardwert.";
+        }
+        if (desc == "Toggles between main and secondary color for the teleport effect in spider mode.") {
+            if (langType == "Espanol") desc = "Alterna entre el color principal y el secundario para el efecto de teletransporte en modo arana.";
+            if (langType == "Portugues") desc = "Alterna entre a cor principal e a secundaria para o efeito de teletransporte no modo aranha.";
+            if (langType == "Russki") desc = "Perekljucenie mezdu osnovnym i dopolnitel nym cvetom dlja effekta teleporta v rezime pauka.";
+            if (langType == "Deutsch") desc = "Schaltet zwischen Haupt- und Sekundaerfarbe fuer den Teleporteffekt im Spinnenmodus um.";
+        }
+        if (desc == "Toggles between main and secondary color for the fire effect from dash orbs.") {
+            if (langType == "Espanol") desc = "Alterna entre el color principal y el secundario para el efecto de fuego de los orbes.";
+            if (langType == "Portugues") desc = "Alterna entre a cor principal e a secundaria para o efeito de fogo dos orbes de traco.";
+            if (langType == "Russki") desc = "Perekljucenie mezdu osnovnym i dopolnitel nym cvetom dlja effekta ognja ot dash-orbov.";
+            if (langType == "Deutsch") desc = "Schaltet zwischen Haupt- und Sekundaerfarbe fuer den Feuereffekt von Dash Orbs um.";
+        }
+        if (desc == "Toggles between main and secondary color for the trail in wave mode.") {
+            if (langType == "Espanol") desc = "Alterna entre el color principal y el secundario para la estela en modo onda.";
+            if (langType == "Portugues") desc = "Alterna entre a cor principal e a secundaria da trilha no modo de onda.";
+            if (langType == "Russki") desc = "Perekljucenie mezdu osnovnym i dopolnitel nym cvetom dlja trassy v rezime volny.";
+            if (langType == "Deutsch") desc = "Schaltet zwischen Haupt- und Sekundaerfarbe fuer den Trail im Wellenmodus um.";
+        }
+        if (desc == "Hides text in the top left when using start positions or ignore damage.") {
+            if (langType == "Espanol") desc = "Oculta el texto en la parte superior izquierda cuando se utilizan posiciones de inicio o ignorar dano.";
+            if (langType == "Portugues") desc = "Oculta o texto no canto superior esquerdo ao usar posicoes iniciais ou ignorar danos.";
+            if (langType == "Russki") desc = "Skryvaet tekst v levom verhnem uglu pri ispol zovanii startovyh pozicij ili ignorirovanii urona.";
+            if (langType == "Deutsch") desc = "Blendet den Text oben links aus, wenn Sie Startpositionen verwenden oder Schaden ignorieren.";
+        }
+        if (desc == "Hides the checkpoint buttons shown in practice mode.") {
+            if (langType == "Espanol") desc = "Oculta los botones de punto de control que se muestran en el modo de practica.";
+            if (langType == "Portugues") desc = "Oculta os botoes de ponto de controle exibidos no modo de pratica.";
+            if (langType == "Russki") desc = "Skryvaet knopki kontrol nyh tocek, otobracaemye v rezime trenirovki.";
+            if (langType == "Deutsch") desc = "Blendet die im Uebungsmodus angezeigten Kontrollpunkt-Schaltflaechen aus.";
+        }
+        if (desc == "Hides the attempt counter when playing levels in practice mode.") {
+            if (langType == "Espanol") desc = "Oculta el contador de intentos al jugar niveles en modo practica.";
+            if (langType == "Portugues") desc = "Oculta o contador de tentativas ao jogar niveis no modo de pratica.";
+            if (langType == "Russki") desc = "Skryvaet scetcik popytok pri prohozdenii urovnej v rezime trenirovki.";
+            if (langType == "Deutsch") desc = "Blendet den Versuchszaehler beim Spielen von Leveln im Uebungsmodus aus.";
+        }
+        if (desc == "Places checkpoints automatically in practice mode.") {
+            if (langType == "Espanol") desc = "Coloca puntos de control automaticamente en el modo de practica.";
+            if (langType == "Portugues") desc = "Coloca pontos de controle automaticamente no modo de pratica.";
+            if (langType == "Russki") desc = "V rezime trenirovki avtomaticeski rasstavljaet kontrol nye tocki.";
+            if (langType == "Deutsch") desc = "Setzt automatisch Kontrollpunkte im Uebungsmodus.";
+        }
+        if (desc == "Tries to place checkpoints more often in practice mode.") {
+            if (langType == "Espanol") desc = "Intenta colocar puntos de control mas a menudo en el modo de practica.";
+            if (langType == "Portugues") desc = "Tenta colocar pontos de controle com mais frequencia no modo de pratica.";
+            if (langType == "Russki") desc = "Starajtes case stavit kontrol nye tocki v rezime praktiki.";
+            if (langType == "Deutsch") desc = "Versucht, im Uebungsmodus haeufiger Kontrollpunkte zu setzen.";
+        }
+        if (desc == "Shows death effects in practice mode.") {
+            if (langType == "Espanol") desc = "Muestra los efectos de la muerte en el modo de práctica.";
+            if (langType == "Portugues") desc = "Mostra os efeitos da morte no modo de pratica.";
+            if (langType == "Russki") desc = "Pokazyvaet effekty smerti v rezime trenirovki.";
+            if (langType == "Deutsch") desc = "Zeigt die Auswirkungen des Todes im Uebungsmodus an.";
+        }
+        if (desc == "Plays normal music in sync to editor levels in practice mode.") {
+            if (langType == "Espanol") desc = "Reproduce musica normal sincronizada con los niveles del editor en el modo de practica.";
+            if (langType == "Portugues") desc = "Reproduz musica normal em sincronia com os niveis do editor no modo de pratica.";
+            if (langType == "Russki") desc = "V rezime trenirovki vosproizvodit obycnuju muzyku v sinhronizacii s urovnjami redaktora.";
+            if (langType == "Deutsch") desc = "Spielt im Uebungsmodus normale Musik synchron zu den Editorstufen ab.";
+        }
+        if (desc == "Shows hitboxes while in practice mode.") {
+            if (langType == "Espanol") desc = "Muestra las cajas de impacto en el modo de practica.";
+            if (langType == "Portugues") desc = "Mostra as hitboxes no modo de pratica.";
+            if (langType == "Russki") desc = "Pokazyvaet hitboksy v rezime trenirovki.";
+            if (langType == "Deutsch") desc = "Zeigt im Uebungsmodus Hitboxen an.";
+        }
+        if (desc == "Disables the player's hitbox in practice mode\n(if hitboxes are shown).") {
+            if (langType == "Espanol") desc = "Desactiva la caja de impacto del jugador en el modo de practica\n(si se muestran las cajas de impacto).";
+            if (langType == "Portugues") desc = "Desativa a hitbox do jogador no modo de pratica\n(se as hitboxes forem exibidas).";
+            if (langType == "Russki") desc = "Otkljucaet hitboks igroka v rezime trenirovki\n(esli hitboksy otobrazajutsja).";
+            if (langType == "Deutsch") desc = "Deaktiviert die Hitbox des Spielers im Uebungsmodus\n(falls Hitboxen angezeigt werden).";
+        }
+        if (desc == "Increases draw capacity for batch nodes at level start. Can improve performance on some levels, but may cause issues on low-end devices.") {
+            if (langType == "Espanol") desc = "Aumenta la capacidad de extraccion de los nodos por lotes al inicio del nivel. Puede mejorar el rendimiento en algunos niveles, pero puede causar problemas en dispositivos de gama baja.";
+            if (langType == "Portugues") desc = "Aumenta a capacidade de extracao dos nos de lote no inicio do nivel. Pode melhorar o desempenho em alguns niveis, mas pode causar problemas em dispositivos de baixo custo.";
+            if (langType == "Russki") desc = "Uvelicivaet propusknuju sposobnost uzlov partii pri zapuske urovnja. Mozet povysit proizvoditel nost na nekotoryh urovnjah, no mozet vyzvat problemy na nizkourovnevyh ustrojstvah.";
+            if (langType == "Deutsch") desc = "Erhoeht die Ziehungskapazitaet fuer Batch-Knoten beim Start der Stufe. Kann die Leistung auf einigen Ebenen verbessern, kann aber auf Low-End-Geraeten Probleme verursachen.";
+        }
+        if (desc == "Enables low detail mode on levels that support it automatically.") {
+            if (langType == "Espanol") desc = "Activa automaticamente el modo de detalle bajo en los niveles que lo admiten.";
+            if (langType == "Portugues") desc = "Ativa o modo de detalhes baixos nos niveis que o suportam automaticamente.";
+            if (langType == "Russki") desc = "Vkljucaet rezim nizkoj detalizacii na urovnjah, kotorye podderzivajut ego avtomaticeski.";
+            if (langType == "Deutsch") desc = "Aktiviert den Low-Detail-Modus auf Ebenen, die ihn automatisch unterstuetzen.";
+        }
+        if (desc == "Removes the alert shown when starting levels with a high object count.") {
+            if (langType == "Espanol") desc = "Elimina la alerta que se muestra al iniciar niveles con un elevado numero de objetos.";
+            if (langType == "Portugues") desc = "Remove o alerta exibido ao iniciar níveis com uma alta contagem de objetos.";
+            if (langType == "Russki") desc = "Ubiraet preduprezdenie, pojavljajuseesja pri zapuske urovnej s bol sim kolicestvom ob ektov.";
+            if (langType == "Deutsch") desc = "Entfernt die Warnung, die beim Starten von Ebenen mit einer hohen Objektanzahl angezeigt wird.";
+        }
+        if (desc == "Removes glow and enter effects while in low detail mode. Levels without LDM show LDM Lite.") {
+            if (langType == "Espanol") desc = "Elimina el brillo y los efectos de entrada en modo de detalle bajo. Los niveles sin LDM muestran LDM Lite.";
+            if (langType == "Portugues") desc = "Remove o brilho e os efeitos de entrada no modo de detalhes baixos. Os niveis sem LDM mostram LDM Lite.";
+            if (langType == "Russki") desc = "Ustranjaet effekty svecenija i vvoda v rezime nizkoj detalizacii. Urovni bez LDM otobrazajutsja v rezime LDM Lite.";
+            if (langType == "Deutsch") desc = "Entfernt Glow- und Enter-Effekte im Low-Detail-Modus. Stufen ohne LDM zeigen LDM Lite.";
+        }
+        if (desc == "Increases maximum locally saved levels from 10 to 100. This refers to level data, not statistics. Enabling this can make your save file considerably larger, so keeping the option off is recommended for quicker saving.") {
+            if (langType == "Espanol") desc = "Aumenta el maximo de niveles guardados localmente de 10 a 100. Esto se refiere a los datos de nivel, no a las estadisticas. Activar esta opción puede hacer que tu archivo de guardado sea considerablemente mas grande, por lo que se recomienda mantenerla desactivada para un guardado mas rapido.";
+            if (langType == "Portugues") desc = "Aumenta o maximo de niveis salvos localmente de 10 para 100. Isso se refere a dados de nivel, nao a estatisticas. A ativacao dessa opcao pode aumentar consideravelmente o tamanho do arquivo salvo, portanto, e recomendavel manter a opcao desativada para um salvamento mais rapido.";
+            if (langType == "Russki") desc = "Uvelicivaet maksimal noe kolicestvo lokal no sohranennyh urovnej s 10 do 100. Eto otnositsja k dannym urovnja, a ne k statistike. Vkljucenie etoj opcii mozet privesti k znacitel nomu uveliceniju razmera fajla sohranenija, poetomu dlja bolee bystrogo sohranenija rekomenduetsja otkljucit etu opciju.";
+            if (langType == "Deutsch") desc = "Erhoeht das Maximum der lokal gespeicherten Stufen von 10 auf 100. Dies bezieht sich auf Leveldaten, nicht auf Statistiken. Wenn Sie diese Option aktivieren, kann Ihre Speicherdatei betraechtlich groesser werden, daher wird empfohlen, die Option zu deaktivieren, um schneller speichern zu koennen.";
+        }
+        if (desc == "Saves level statistics as usual, but levels need to be redownloaded every time you restart the game. Makes saving and loading faster.") {
+            if (langType == "Espanol") desc = "Guarda las estadisticas de nivel como de costumbre, pero los niveles tienen que volver a descargarse cada vez que reinicias el juego. Hace que guardar y cargar sea mas rapido.";
+            if (langType == "Portugues") desc = "Salva as estatisticas de nivel como de costume, mas os niveis precisam ser recarregados sempre que voce reiniciar o jogo. Torna o salvamento e o carregamento mais rapidos.";
+            if (langType == "Russki") desc = "Sohranjaet statistiku urovnej, kak obycno, no urovni nuzno perezagruzat kazdyj raz, kogda vy perezapuskaete igru. Uskorjaet sohranenie i zagruzku.";
+            if (langType == "Deutsch") desc = "Speichert die Level-Statistiken wie gewohnt, aber die Level muessen bei jedem Neustart des Spiels neu heruntergeladen werden. Das macht das Speichern und Laden schneller.";
+        }
+        if (desc == "Saves gauntlet levels locally so they do not have to be redownloaded. Increases save time but helpful if you have poor connection. ") {
+            if (langType == "Espanol") desc = "Guarda los niveles del guantelete localmente para no tener que volver a descargarlos. Aumenta el tiempo de guardado pero es util si tienes mala conexion.";
+            if (langType == "Portugues") desc = "Salva os niveis de desafio localmente para que nao seja necessario fazer o download novamente. Aumenta o tempo de salvamento, mas e util se voce tiver uma conexao ruim.";
+            if (langType == "Russki") desc = "Sohranjaet urovni gauntlet lokal no, ctoby ne zagruzat ih zanovo. Uvelicivaet vremja sohranenija, no polezno, esli u vas plohoe soedinenie.";
+            if (langType == "Deutsch") desc = "Speichert Gauntlet-Levels lokal, damit sie nicht erneut heruntergeladen werden muessen. Erhoeht die Speicherzeit, ist aber hilfreich, wenn Sie eine schlechte Verbindung haben.";
+        }
+        if (desc == "Disables anti-aliasing on shader effects.") {
+            if (langType == "Espanol") desc = "Desactiva el antialiasing en los efectos de sombreado.";
+            if (langType == "Portugues") desc = "Desativa o anti-aliasing nos efeitos do sombreador.";
+            if (langType == "Russki") desc = "Otkljucaet sglazivanie v sejdernyh effektah.";
+            if (langType == "Deutsch") desc = "Deaktiviert Anti-Aliasing fuer Shader-Effekte.";
+        }
+        if (desc == "Saves custom songs in a different directory. May fix custom songs not working.") {
+            if (langType == "Espanol") desc = "Guarda las canciones personalizadas en un directorio diferente. Puede arreglar las canciones personalizadas que no funcionan.";
+            if (langType == "Portugues") desc = "Salva musicas personalizadas em um diretorio diferente. Pode corrigir musicas personalizadas que nao estao funcionando.";
+            if (langType == "Russki") desc = "Sohranjaet pol zovatel skie pesni v drugom kataloge. Mozet ispravit nerabotajusie pol zovatel skie pesni.";
+            if (langType == "Deutsch") desc = "Speichert benutzerdefinierte Lieder in einem anderen Verzeichnis. Kann benutzerdefinierte Lieder beheben, die nicht funktionieren.";
+        }
+        if (desc == "Removes the alert shown when starting levels without the song downloaded.") {
+            if (langType == "Espanol") desc = "Elimina la alerta que se muestra al iniciar niveles sin la cancion descargada.";
+            if (langType == "Portugues") desc = "Remove o alerta exibido ao iniciar niveis sem o download da musica.";
+            if (langType == "Russki") desc = "Ubiraet preduprezdenie, pojavljajuseesja pri zapuske urovnej bez zagruzennoj pesni.";
+            if (langType == "Deutsch") desc = "Entfernt die Warnung, die beim Starten von Leveln ohne heruntergeladenen Song angezeigt wird.";
+        }
+        if (desc == "Stops automatic deletion of custom songs. This is done by default to save space.") {
+            if (langType == "Espanol") desc = "Detiene el borrado automatico de canciones personalizadas. Esto se hace por defecto para ahorrar espacio.";
+            if (langType == "Portugues") desc = "Interrompe a exclusao automatica de musicas personalizadas. Isso e feito por padrao para economizar espaco.";
+            if (langType == "Russki") desc = "Prekrasenie avtomaticeskogo udalenija pol zovatel skih pesen. Eto delaetsja po umolcaniju dlja ekonomii mesta.";
+            if (langType == "Deutsch") desc = "Stoppt das automatische Loeschen von eigenen Songs. Dies ist standardmaessig der Fall, um Speicherplatz zu sparen.";
+        }
+        if (desc == "Lowers audio sampling rate from 44100 Hz to 24000 Hz. Requires restarting to take effect.") {
+            if (langType == "Espanol") desc = "Reduce la frecuencia de muestreo de audio de 44100 Hz a 24000 Hz. Es necesario reiniciar para que surta efecto.";
+            if (langType == "Portugues") desc = "Reduz a taxa de amostragem de audio de 44100 Hz para 24000 Hz. E necessario reiniciar o sistema para ter efeito.";
+            if (langType == "Russki") desc = "Snizaet castotu diskretizacii zvuka s 44100 Gc do 24000 Gc. Dlja vstuplenija v silu trebuetsja perezagruzka.";
+            if (langType == "Deutsch") desc = "Senkt die Audio-Abtastrate von 44100 Hz auf 24000 Hz. Erfordert einen Neustart, um wirksam zu werden.";
+        }
+        if (desc == "Increases the audio buffer size, which may fix certain issues. Do not enable if audio is working fine. Causes a slight more audio delay. Requires restarting to take effect.") {
+            if (langType == "Espanol") desc = "Aumenta el tamano del bufer de audio, lo que puede solucionar ciertos problemas. No activar si el audio funciona correctamente. Causa un ligero retraso en el audio. Requiere reiniciar para que surta efecto.";
+            if (langType == "Portugues") desc = "Aumenta o tamanho do buffer de audio, o que pode corrigir alguns problemas. Nao ative se o audio estiver funcionando bem. Causa um pequeno atraso no audio. Requer a reinicializacao para ter efeito.";
+            if (langType == "Russki") desc = "Uvelicivaet razmer zvukovogo bufera, cto mozet ispravit nekotorye problemy. Ne vkljucajte, esli zvuk rabotaet normal no. Vyzyvaet nebol suju zaderzku zvuka. Dlja vstuplenija v silu trebuetsja perezagruzka.";
+            if (langType == "Deutsch") desc = "Erhoeht die Groesse des Audiopuffers, was bestimmte Probleme beheben kann. Nicht aktivieren, wenn der Ton einwandfrei funktioniert. Verursacht eine etwas groessere Audioverzoegerung. Erfordert einen Neustart, um wirksam zu werden.";
+        }
+        if (desc == "Shows more comments per page. Why not?") {
+            if (langType == "Espanol") desc = "Muestra mas comentarios por pagina. Por que no?";
+            if (langType == "Portugues") desc = "Mostra mais comentarios por pagina. Por que nao?";
+            if (langType == "Russki") desc = "Pokazyvaet bol se kommentariev na stranice. Pocemu net?";
+            if (langType == "Deutsch") desc = "Zeigt mehr Kommentare pro Seite an. Warum nicht?";
+        }
+        if (desc == "Loads comments automatically.") {
+            if (langType == "Espanol") desc = "Carga los comentarios automaticamente.";
+            if (langType == "Portugues") desc = "Carrega comentarios automaticamente.";
+            if (langType == "Russki") desc = "Kommentarii zagruzajutsja avtomaticeski.";
+            if (langType == "Deutsch") desc = "Laedt Kommentare automatisch.";
+        }
+        if (desc == "Makes completed levels filter based only on percentage from update 2.1. Useful to rebeat levels for Mana Orbs.") {
+            if (langType == "Espanol") desc = "Hace que los niveles completados se filtren basandose solo en el porcentaje de la actualizacion 2.1. Util para volver a superar niveles y conseguir orbes de mana.";
+            if (langType == "Portugues") desc = "Faz com que os niveis concluidos sejam filtrados com base apenas na porcentagem da atualizaaco 2.1. Util para repetir niveis para obter orbes de mana.";
+            if (langType == "Russki") desc = "Delaet fil tr zaversennyh urovnej, osnovannyj tol ko na procentah iz obnovlenija 2.1. Polezno dlja povtornogo prohozdenija urovnej dlja polucenija mana-orbov.";
+            if (langType == "Deutsch") desc = "Der Filter fuer abgeschlossene Levels basiert nur noch auf dem Prozentsatz aus Update 2.1. Nuetzlich zum Wiederholen von Levels fuer Mana Orbs.";
+        }
+        if (desc == "Increases created and saved levels per page from 10 to 20.") {
+            if (langType == "Espanol") desc = "Aumenta de 10 a 20 los niveles creados y guardados por pagina.";
+            if (langType == "Portugues") desc = "Aumenta os niveis criados e salvos por pagina de 10 para 20.";
+            if (langType == "Russki") desc = "Uvelicivaet kolicestvo sozdannyh i sohranennyh urovnej na stranice s 10 do 20.";
+            if (langType == "Deutsch") desc = "Erhoeht die Anzahl der erstellten und gespeicherten Ebenen pro Seite von 10 auf 20.";
+        }
+        if (desc == "Places new levels last in the saved levels list. Useful if you want to manually move levels to the top.") {
+            if (langType == "Espanol") desc = "Coloca los nuevos niveles en ultimo lugar en la lista de niveles guardados. Util si quieres mover manualmente los niveles a la parte superior.";
+            if (langType == "Portugues") desc = "Coloca os novos niveis em ultimo lugar na lista de niveis salvos. Util se voce quiser mover manualmente os niveis para o topo.";
+            if (langType == "Russki") desc = "Pomesaet novye urovni poslednimi v spiske sohranennyh urovnej. Polezno, esli vy hotite vrucnuju peremestit urovni na samyj verh.";
+            if (langType == "Deutsch") desc = "Setzt neue Level in der Liste der gespeicherten Level an die letzte Stelle. Nuetzlich, wenn Sie Ebenen manuell an den Anfang verschieben moechten.";
+        }
+        if (desc == "Toggles viewing the leaderboard percentage you have on levels. To upload your level progress to the level leaderboard, you need to replay levels completed before 2.11.") {
+            if (langType == "Espanol") desc = "Activa la visualización del porcentaje de la tabla de clasificacion que tienes en los niveles. Para subir el progreso de tu nivel a la clasificacion de niveles, tienes que volver a jugar los niveles completados antes de la version 2.11.";
+            if (langType == "Portugues") desc = "Alterna a visualizacao da porcentagem da tabela de classificacao que voce tem nos niveis. Para carregar seu progresso de nivel na tabela de classificacao de niveis, voce precisa repetir os niveis concluidos antes da versao 2.11.";
+            if (langType == "Russki") desc = "Perekljucaet prosmotr procenta liderov, nabrannogo vami na urovnjah. Ctoby zagruzit svoj progress v tablicu liderov urovnej, neobhodimo pereigrat urovni, zaversennye do versii 2.11.";
+            if (langType == "Deutsch") desc = "Schaltet die Anzeige des Prozentsatzes in der Rangliste ein, den Sie in den Levels haben. Um Ihren Level-Fortschritt in die Level-Bestenliste hochzuladen, muessen Sie Level, die vor 2.11 abgeschlossen wurden, erneut spielen.";
+        }
+        if (desc == "Shows decimals in level progress.") {
+            if (langType == "Espanol") desc = "Muestra los decimales en el progreso del nivel.";
+            if (langType == "Portugues") desc = "Mostra decimais no progresso do nivel.";
+            if (langType == "Russki") desc = "Pokazyvaet desjaticnye cisla v progresse urovnja.";
+            if (langType == "Deutsch") desc = "Zeigt Dezimalstellen im Stufenverlauf an.";
+        }
+        if (desc == "Does not do anything... Well, nothing useful.") {
+            if (langType == "Espanol") desc = "No hace nada... Bueno, nada util.";
+            if (langType == "Portugues") desc = "Nao faz nada... Bem, nada de util.";
+            if (langType == "Russki") desc = "Nicego ne delaet... Nu, nicego poleznogo.";
+            if (langType == "Deutsch") desc = "Es tut nichts... Nun, nichts Nuetzliches.";
+        }
+        if (desc == "Adds an extra confirmation window when exiting levels.") {
+            if (langType == "Espanol") desc = "Anade una ventana de confirmacion adicional al salir de los niveles.";
+            if (langType == "Portugues") desc = "Adiciona uma janela de confirmacao extra ao sair dos niveis.";
+            if (langType == "Russki") desc = "Dobavljaet dopolnitel noe okno podtverzdenija pri vyhode iz urovnej.";
+            if (langType == "Deutsch") desc = "Fuegt ein zusaetzliches Bestaetigungsfenster beim Verlassen von Ebenen hinzu.";
+        }
+        if (desc == "Makes transitions between menu pages faster.") {
+            if (langType == "Espanol") desc = "Transiciones mas rapidas entre paginas de menu.";
+            if (langType == "Portugues") desc = "Torna mais rapidas as transicoes entre as paginas do menu.";
+            if (langType == "Russki") desc = "Uskorjaet perehody mezdu stranicami menju.";
+            if (langType == "Deutsch") desc = "Die Uebergaenge zwischen den Menueseiten werden schneller.";
+        }
 
         log::info("{}\n{}", desc, splitString(desc, '\n'));
 
